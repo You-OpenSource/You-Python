@@ -1,11 +1,11 @@
 # Poetry pyproject.toml: https://python-poetry.org/docs/pyproject/
 [build-system]
-requires = ["poetry_core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
+build-backend = "poetry_dynamic_versioning.backend"
 
 [tool.poetry]
 name = "youdotcom"
-version = "0.1.4"
+version = "0.1.8"
 description = "unofficial api wrapper for you.com and all of its apps"
 readme = "README.md"
 authors = ["youdotcom <silkepilon2009@gmail.com>"]
@@ -40,24 +40,25 @@ PyVirtualDisplay = "3.0"
 
 typer = {extras = ["all"], version = "^0.4.0"}
 rich = "^10.14.0"
+poetry-dynamic-versioning = {extras = ["plugin"], version = "^0.21.3"}
 
 [tool.poetry.dev-dependencies]
-bandit = "^1.7.1"
-black = {version = "^21.10b0", allow-prereleases = true}
+bandit = "^1.7.4"
+black = {version = "^22.12.0", allow-prereleases = true}
 darglint = "^1.8.1"
-isort = {extras = ["colors"], version = "^5.10.1"}
-mypy = "^0.910"
+isort = {extras = ["colors"], version = "^5.11.4"}
+mypy = "^0.991"
 mypy-extensions = "^0.4.3"
-pre-commit = "^2.15.0"
+pre-commit = "^2.21.0"
 pydocstyle = "^6.1.1"
-pylint = "^2.11.1"
-pytest = "^6.2.5"
-pyupgrade = "^2.29.1"
+pylint = "^2.15.9"
+pytest = "^7.2.0"
+pyupgrade = "^3.3.1"
 safety = "^2.3.5"
 coverage = "^7.0.1"
 coverage-badge = "^1.1.0"
-pytest-html = "^3.1.1"
-pytest-cov = "^3.0.0"
+pytest-html = "^3.2.0"
+pytest-cov = "^4.0.0"
 click = "8.0.4"
 [tool.black]
 # https://github.com/psf/black
@@ -147,3 +148,6 @@ branch = true
 [coverage.report]
 fail_under = 50
 show_missing = true
+
+[tool.poetry-dynamic-versioning]
+enable = true

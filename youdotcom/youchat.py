@@ -73,8 +73,7 @@ class Chat:
         # Start the browser
         options = uc.ChromeOptions()
         options.add_argument(f"--window-size={800},{600}")
-        if self.__proxy:
-            options.add_argument(f"--proxy-server={self.__proxy}")
+
         try:
             self.__verbose_print("[init] Starting browser")
             self.driver = uc.Chrome(options=options, enable_cdp_events=True)
