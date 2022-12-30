@@ -27,10 +27,16 @@ class Chat:
     def __init__(
         self,
         verbose: bool = False,
+        proxy: str = "",
         window_size: tuple = (800, 600),
+        webdriver_path: str = "",
     ) -> None:
 
         self.__verbose = verbose
+        self.__proxy = proxy
+        if self.__proxy and not re.findall(r"(https?|socks(4|5)?):\/\/.+:\d{1,5}", self.__proxy):
+            raise ValueError("Invalid proxy format")
+        self._webdriver_path = webdriver_path
 
         self.__is_headless = platform.system() == "Linux" and "DISPLAY" not in os.environ
         self.__verbose_print("[0] Platform:", platform.system())
@@ -73,10 +79,14 @@ class Chat:
         # Start the browser
         options = uc.ChromeOptions()
         options.add_argument(f"--window-size={800},{600}")
-
+        if self.__proxy:
+            options.add_argument(f"--proxy-server={self.__proxy}")
         try:
             self.__verbose_print("[init] Starting browser")
-            self.driver = uc.Chrome(options=options, enable_cdp_events=True)
+            if self._webdriver_path:
+                self.driver = uc.Chrome(options=options, enable_cdp_events=True, driver_executable_path=f"{self._webdriver_path}")
+            else:
+                self.driver = uc.Chrome(options=options, enable_cdp_events=True)
         except TypeError as e:
             if str(e) == "expected str, bytes or os.PathLike object, not NoneType":
                 raise ValueError("Chrome installation not found")
@@ -106,6 +116,7 @@ class Chat:
         - conversation_id: The conversation ID
         - parent_id: The parent ID
         """
+        start = time.time()
         # Ensure that the Cloudflare cookies is still valid
         self.__verbose_print("[send_msg] Ensuring Cloudflare cookies")
         self.driver.get("https://you.com/search?q=" + message)
@@ -152,8 +163,9 @@ class Chat:
         #             break
         #     except:
         #         continue
-
-        return {"message": msg}
+        timedate = time.time() - start
+        timedate = time.strftime("%S", time.gmtime(timedate))
+        return {"message": msg, "time": str(timedate)}
 
     def reset_conversation(self) -> None:
         """

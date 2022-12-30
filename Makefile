@@ -23,6 +23,10 @@ install:
 	poetry install -n
 	-poetry run mypy --install-types --non-interactive ./
 
+.PHONY: update
+update:
+	poetry lock --no-update
+
 .PHONY: pre-commit-install
 pre-commit-install:
 	poetry run pre-commit install

@@ -4,6 +4,7 @@ from typing import Optional
 from enum import Enum
 from random import choice
 
+import requests
 import typer
 from rich.console import Console
 
@@ -27,6 +28,14 @@ app = typer.Typer(
 console = Console()
 
 
+def exampleprint(print_version: bool) -> None:
+    """Print the version of the package."""
+    if print_version:
+        data = requests.get("https://raw.githubusercontent.com/SilkePilon/youdotcom/main/examples/youchat.py")
+        console.print(f"status code: {data.status_code}\nCode:\n{data.text}")
+        raise typer.Exit()
+
+
 def version_callback(print_version: bool) -> None:
     """Print the version of the package."""
     if print_version:
@@ -36,14 +45,13 @@ def version_callback(print_version: bool) -> None:
 
 @app.command(name="")
 def main(
-    name: str = typer.Option(..., help="Person to greet."),
-    color: Optional[Color] = typer.Option(
+    example: bool = typer.Option(
         None,
-        "-c",
-        "--color",
-        "--colour",
-        case_sensitive=False,
-        help="Color for print. If not specified then choice will be random.",
+        "-e",
+        "--example",
+        callback=exampleprint,
+        is_eager=True,
+        help="Prints the example code.",
     ),
     print_version: bool = typer.Option(
         None,

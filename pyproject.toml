@@ -1,11 +1,11 @@
 # Poetry pyproject.toml: https://python-poetry.org/docs/pyproject/
 [build-system]
-requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
-build-backend = "poetry_dynamic_versioning.backend"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "youdotcom"
-version = "0.1.8"
+version = "0.1.21"
 description = "unofficial api wrapper for you.com and all of its apps"
 readme = "README.md"
 authors = ["youdotcom <silkepilon2009@gmail.com>"]
@@ -33,14 +33,14 @@ classifiers = [  #! Update me
 
 [tool.poetry.dependencies]
 python = "^3.9"
-undetected_chromedriver = "3.1.7"
-markdownify= "0.11.6"
-chromedriver-autoinstaller = "0.4.0"
-PyVirtualDisplay = "3.0"
 
 typer = {extras = ["all"], version = "^0.4.0"}
 rich = "^10.14.0"
-poetry-dynamic-versioning = {extras = ["plugin"], version = "^0.21.3"}
+undetected-chromedriver = "^3.2.1"
+markdownify = "^0.11.6"
+chromedriver-autoinstaller = "^0.4.0"
+PyVirtualDisplay = "^3.0"
+
 
 [tool.poetry.dev-dependencies]
 bandit = "^1.7.4"
@@ -148,6 +148,3 @@ branch = true
 [coverage.report]
 fail_under = 50
 show_missing = true
-
-[tool.poetry-dynamic-versioning]
-enable = true
