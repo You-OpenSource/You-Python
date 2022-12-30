@@ -4,4 +4,4 @@ chat = Chat()  # you can also specify a chrome webdriver if the pre-installed on
 
 response = chat.send_message(message="what is the time?")  # returns a json string with the message and time it took to complete
 
-print(response["message"])  # returns only the message of the response
+print(response["message"])  # prints only the message of the response. use 'response["time"]' to get the time
