@@ -8,7 +8,6 @@ import typer
 from rich.console import Console
 
 from youdotcom import version
-from youdotcom.example import hello
 
 
 class Color(str, Enum):
@@ -56,11 +55,8 @@ def main(
     ),
 ) -> None:
     """YouDotCom - unofficial python api wrapper for you.com and all of its apps"""
-    if color is None:
-        color = choice(list(Color))
 
-    greeting: str = hello(name)
-    console.print(f"[bold {color}]{greeting}[/]")
+    console.print(f".")
 
 
 if __name__ == "__main__":

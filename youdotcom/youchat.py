@@ -26,16 +26,11 @@ class Chat:
 
     def __init__(
         self,
-        proxy: str = None,
         verbose: bool = False,
         window_size: tuple = (800, 600),
     ) -> None:
 
         self.__verbose = verbose
-
-        self.__proxy = proxy
-        if self.__proxy and not re.findall(r"(https?|socks(4|5)?):\/\/.+:\d{1,5}", self.__proxy):
-            raise ValueError("Invalid proxy format")
 
         self.__is_headless = platform.system() == "Linux" and "DISPLAY" not in os.environ
         self.__verbose_print("[0] Platform:", platform.system())
