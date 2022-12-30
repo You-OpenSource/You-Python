@@ -5,6 +5,7 @@ import platform
 import re
 import time
 
+import chromedriver_autoinstaller
 import markdownify
 import undetected_chromedriver as uc
 from pyvirtualdisplay import Display
@@ -15,6 +16,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
+chromedriver_autoinstaller.install()
+
 
 class Chat:
     """
@@ -23,17 +26,9 @@ class Chat:
 
     def __init__(
         self,
-        session_token: str = None,
-        email: str = None,
-        password: str = None,
-        auth_type: str = None,
         proxy: str = None,
-        moderation: bool = True,
         verbose: bool = False,
         window_size: tuple = (800, 600),
-        twocaptcha_apikey: str = "",
-        openai_auth_semi_automatic: bool = True,
-        login_cookies_path: str = "",
     ) -> None:
 
         self.__verbose = verbose
@@ -87,7 +82,7 @@ class Chat:
             options.add_argument(f"--proxy-server={self.__proxy}")
         try:
             self.__verbose_print("[init] Starting browser")
-            self.driver = uc.Chrome(options=options, enable_cdp_events=True, driver_executable_path="/usr/bin/chromedriver")
+            self.driver = uc.Chrome(options=options, enable_cdp_events=True)
         except TypeError as e:
             if str(e) == "expected str, bytes or os.PathLike object, not NoneType":
                 raise ValueError("Chrome installation not found")

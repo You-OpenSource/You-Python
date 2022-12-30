@@ -1,23 +1,8 @@
-"""Tests for hello function."""
-import pytest
+from youdotcom.youchat import Chat
 
-from youdotcom.example import hello
+chat = Chat()
 
+response = chat.send_message(message="who are you?")
 
-@pytest.mark.parametrize(
-    ("name", "expected"),
-    [
-        ("Jeanette", "Hello Jeanette!"),
-        ("Raven", "Hello Raven!"),
-        ("Maxine", "Hello Maxine!"),
-        ("Matteo", "Hello Matteo!"),
-        ("Destinee", "Hello Destinee!"),
-        ("Alden", "Hello Alden!"),
-        ("Mariah", "Hello Mariah!"),
-        ("Anika", "Hello Anika!"),
-        ("Isabella", "Hello Isabella!"),
-    ],
-)
-def test_hello(name, expected):
-    """Example test with parametrization."""
-    assert hello(name) == expected
+print(response)
+# {'message': 'I am an AI-powered language model from You.com. I am designed to assist with tasks and provide answers to questions, as well as engage in conversations on a wide range of topics.'}
