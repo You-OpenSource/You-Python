@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "youdotcom"
-version = "0.1.3"
+version = "0.1.4"
 description = "unofficial api wrapper for you.com and all of its apps"
 readme = "README.md"
 authors = ["youdotcom <silkepilon2009@gmail.com>"]
@@ -33,6 +33,10 @@ classifiers = [  #! Update me
 
 [tool.poetry.dependencies]
 python = "^3.9"
+undetected_chromedriver = "3.1.7"
+markdownify= "0.11.6"
+chromedriver-autoinstaller = "0.4.0"
+PyVirtualDisplay = "3.0"
 
 typer = {extras = ["all"], version = "^0.4.0"}
 rich = "^10.14.0"
