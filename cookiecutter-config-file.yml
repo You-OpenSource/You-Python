@@ -1,0 +1,13 @@
+# This file contains values from Cookiecutter
+
+default_context:
+  project_name: "youdotcom"
+  project_description: "unofficial api wrapper for you.com and all of its apps"
+  organization: "youdotcom"
+  license: "MIT"
+  minimal_python_version: 3.9
+  github_name: "silkepilon"
+  email: "silkepilon2009@gmail.com"
+  version: "0.1.0"
+  line_length: "200"
+  create_example_template: "cli"
