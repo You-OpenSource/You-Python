@@ -55,7 +55,7 @@ def main(
         help="Prints the version of the youdotcom package.",
     ),
 ) -> None:
-    """Print a greeting with a giving name."""
+    """YouDotCom - unofficial python api wrapper for you.com and all of its apps"""
     if color is None:
         color = choice(list(Color))
 
