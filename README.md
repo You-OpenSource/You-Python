@@ -9,7 +9,7 @@
 
 <h4 align="center">An unofficial python library wrapper for <a href="http://you.com/" target="_blank">you.com</a> and all of its apps.</h4>
 
-<p align="center">
+<div align="center">
 [![Build status](https://github.com/silkepilon/youdotcom/workflows/build/badge.svg?branch=master&event=push)](https://github.com/silkepilon/youdotcom/actions?query=workflow%3Abuild)
 [![Python Version](https://img.shields.io/pypi/pyversions/youdotcom.svg)](https://pypi.org/project/youdotcom/)
 [![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/silkepilon/youdotcom/pulls?utf8=%E2%9C%93&q=is%3Apr%20author%3Aapp%2Fdependabot)
@@ -20,7 +20,7 @@
 [![Semantic Versions](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--versions-e10079.svg)](https://github.com/silkepilon/youdotcom/releases)
 [![License](https://img.shields.io/github/license/silkepilon/youdotcom)](https://github.com/silkepilon/youdotcom/blob/master/LICENSE)
 ![Coverage Report](assets/images/coverage.svg)
-</p>
+</div>
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
