@@ -64,7 +64,7 @@ or use:
 ```youdotcom -example```
 
 > **Note**
-> If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+> YouDotCom is in Alpha and there will be bugs!
 
 
 ## install
@@ -80,10 +80,6 @@ YouDotCom also has an official [discord server](https://discord.gg/SD7wZMFSvV), 
 This software uses the following open source packages:
 
 - [undetected-chromedriver](https://github.com/ultrafunkamsterdam/undetected-chromedriver)
-
-## Related
-
-[markdownify-web](https://github.com/amitmerchant1990/markdownify-web) - Web version of Markdownify
 
 
 ## License
