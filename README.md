@@ -43,6 +43,8 @@
 ## How To Use
 
 First you need to <a href="#install">Install</a> YouDotCom, then as example code for YouChat:
+> **Warning!**
+> Do not spam or harm the you.com servers in any way!
 
 ```python
 from youdotcom.init import Init  # import the Init class
