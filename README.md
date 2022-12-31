@@ -29,7 +29,6 @@
   <a href="#how-to-use">How To Use</a> •
   <a href="#install">Install</a> •
   <a href="#credits">Credits</a> •
-  <a href="#related">Related</a> •
   <a href="#license">License</a>
 </p>
 
@@ -72,21 +71,15 @@ or use:
 
 ```pip install youdotcom --upgrade```
 
-## Emailware
+## Discord
 
-Markdownify is an [emailware](https://en.wiktionary.org/wiki/emailware). Meaning, if you liked using this app or it has helped you in any way, I'd like you send me an email at <bullredeyes@gmail.com> about anything you'd want to say about this software. I'd really appreciate it!
+YouDotCom also has an official [discord server](https://discord.gg/SD7wZMFSvV), chat and help developers with there projects!
 
 ## Credits
 
 This software uses the following open source packages:
 
-- [Electron](http://electron.atom.io/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
-- [showdown](http://showdownjs.github.io/showdown/)
-- [CodeMirror](http://codemirror.net/)
-- Emojis are taken from [here](https://github.com/arvida/emoji-cheat-sheet.com)
-- [highlight.js](https://highlightjs.org/)
+- [undetected-chromedriver](https://github.com/ultrafunkamsterdam/undetected-chromedriver)
 
 ## Related
 
