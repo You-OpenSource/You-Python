@@ -5,10 +5,12 @@ import platform
 import re
 import time
 
+import ascii_magic
 import chromedriver_autoinstaller
 import markdownify
 import undetected_chromedriver as uc
 import urllib3
+from colorama import Fore
 from pyvirtualdisplay import Display
 from selenium.common import exceptions as SeleniumExceptions
 from selenium.webdriver.common.action_chains import ActionChains
@@ -16,6 +18,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+
+from youdotcom import version
 
 urllib3.disable_warnings()
 chromedriver_autoinstaller.install()
@@ -30,16 +34,11 @@ class Init:
     Returns a `variable` with the driver
     """
 
-    def __init__(
-        self,
-        verbose: bool = False,
-        proxy: str = "",
-        window_size: tuple = (800, 600),
-        webdriver_path: str = "",
-    ) -> None:
+    def __init__(self, verbose: bool = False, proxy: str = "", window_size: tuple = (800, 600), webdriver_path: str = "", hide: bool = False) -> None:
 
         self.__verbose = verbose
         self.__proxy = proxy
+        self.__hide = hide
         if self.__proxy and not re.findall(r"(https?|socks(4|5)?):\/\/.+:\d{1,5}", self.__proxy):
             raise ValueError("Invalid proxy format")
         self._webdriver_path = webdriver_path
@@ -103,6 +102,37 @@ class Init:
         """
         Initialize the browser
         """
+        if self.__hide == False:
+            print(f"╭──────────────────────────────────────────────────────────────╮")
+            try:
+                my_art = ascii_magic.from_url("https://github.com/SilkePilon/youdotcom/raw/main/youdotcom.png?raw=true", columns=27, width_ratio=2.2)
+            except OSError as e:
+                print(f"Could not load the image, server said: {e.code} {e.msg}")
+                my_art = """
+sI?!!]]7LT#TnJf3525
+lssll{ESDMWHP77LJfw
+%%vIejbEkDQQBJyJ7u#
+v)#WQQ0RMR00&bQRmjT     YouDotCom - [error]
+v)#WQQ0RMR00&bQRmjT
+{rYQQBGO&&8AYNQQAL#
+joSMQG$0QRR00Q0WqTC  Made my Silke Pilon on GitHub
+22f6SqMQQWUO8m62Cff
+mqmF5FOBMRWY&FFpmmF
+3pF5222FmghhSghhhSm
+                """
+            my_art = my_art.split("\n")
+            index = 0
+            for line in my_art:
+                line = line.replace("\n", "")
+                if index == 3:
+                    print(f"{Fore.RESET}| " + line + f"{Fore.RESET}     YouDotCom - {version}")
+                if index == 5:
+                    print(f"{Fore.RESET}| " + line + f"{Fore.RESET}  Made my Silke Pilon on GitHub")
+                else:
+                    print(f"{Fore.RESET}| " + line)
+                index += 1
+            print(f"╰──────────────────────────────────────────────────────────────╯")
+            print("To disable this message use 'hide=True' in your Init class")
         # Detect if running on a headless server
         if self.__is_headless:
             try:

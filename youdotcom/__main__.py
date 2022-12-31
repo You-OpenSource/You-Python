@@ -1,12 +1,15 @@
 # type: ignore[attr-defined]
 from typing import Optional
 
+import sys
 from enum import Enum
+from importlib import metadata as importlib_metadata
 from random import choice
 
 import ascii_magic
 import requests
 import typer
+from colorama import Fore
 from rich.console import Console
 
 from youdotcom import version
@@ -31,11 +34,23 @@ console = Console()
 
 def logo() -> None:
     """Print the version of the package."""
+    console.print(f"╭──────────────────────────────────────────────────────────────╮")
     try:
-        my_art = ascii_magic.from_url("https://github.com/SilkePilon/youdotcom/raw/main/youdotcom.png?raw=true", columns=100)
+        my_art = ascii_magic.from_url("https://github.com/SilkePilon/youdotcom/raw/main/youdotcom.png?raw=true", columns=27, width_ratio=2.2)
     except OSError as e:
         print(f"Could not load the image, server said: {e.code} {e.msg}")
-    ascii_magic.to_terminal(my_art)
+    my_art = my_art.split("\n")
+    index = 0
+    for line in my_art:
+        line = line.replace("\n", "")
+        if index == 3:
+            print(f"{Fore.RESET}| " + line + f"{Fore.RESET}     YouDotCom - {version}")
+        if index == 5:
+            print(f"{Fore.RESET}| " + line + f"{Fore.RESET}  Made my Silke Pilon on GitHub")
+        else:
+            print(f"{Fore.RESET}| " + line)
+        index += 1
+    console.print(f"╰──────────────────────────────────────────────────────────────╯")
     raise typer.Exit()
 
 
