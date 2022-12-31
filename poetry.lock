@@ -1,4 +1,16 @@
 [[package]]
+name = "ascii-magic"
+version = "1.6"
+description = "Converts pictures into ASCII art"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.dependencies]
+colorama = "*"
+Pillow = "*"
+
+[[package]]
 name = "astroid"
 version = "2.12.13"
 description = "An abstract syntax tree for Python with inference support."
@@ -435,6 +447,18 @@ description = "Python Build Reasonableness"
 category = "dev"
 optional = false
 python-versions = ">=2.6"
+
+[[package]]
+name = "pillow"
+version = "9.3.0"
+description = "Python Imaging Library (Fork)"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+docs = ["furo", "olefile", "sphinx (>=2.4)", "sphinx-copybutton", "sphinx-issues (>=3.0.1)", "sphinx-removed-in", "sphinxext-opengraph"]
+tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "packaging", "pyroma", "pytest", "pytest-cov", "pytest-timeout"]
 
 [[package]]
 name = "platformdirs"
@@ -970,9 +994,10 @@ h11 = ">=0.9.0,<1"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "f99cd22b84f8e2ebb80f710ef6f68066814b385ca3b10c23bff775693934b0bb"
+content-hash = "a9f992660e85f8ca505597607ef61e724adf554ca0f565c021e3718d4af4ff72"
 
 [metadata.files]
+ascii-magic = []
 astroid = []
 async-generator = []
 attrs = []
@@ -1012,6 +1037,7 @@ outcome = []
 packaging = []
 pathspec = []
 pbr = []
+pillow = []
 platformdirs = []
 pluggy = []
 pre-commit = []

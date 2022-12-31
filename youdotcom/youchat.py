@@ -38,13 +38,13 @@ class Chat:
     def send_message(driver, message: str) -> dict:
 
         """
-        Send a message to the chatbot\n
+        Send a message to YouChat\n
         Parameters:
         - message: The message you want to send\n
+        - driver: pass the driver form the Init variable\n
         Returns a `dict` with the following keys:
-        - message: The message the chatbot sent
-        - conversation_id: The conversation ID
-        - parent_id: The parent ID
+        - message: The response from YouChat\n
+        - time: the time it took to complete your request
         """
         start = time.time()
         # Ensure that the Cloudflare cookies is still valid

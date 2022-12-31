@@ -4,6 +4,7 @@ from typing import Optional
 from enum import Enum
 from random import choice
 
+import ascii_magic
 import requests
 import typer
 from rich.console import Console
@@ -28,12 +29,21 @@ app = typer.Typer(
 console = Console()
 
 
-def exampleprint(print_version: bool) -> None:
+def logo() -> None:
     """Print the version of the package."""
-    if print_version:
-        data = requests.get("https://raw.githubusercontent.com/SilkePilon/youdotcom/main/examples/youchat.py")
-        console.print(f"status code: {data.status_code}\nCode:\n{data.text}")
-        raise typer.Exit()
+    try:
+        my_art = ascii_magic.from_url("https://github.com/SilkePilon/youdotcom/raw/main/youdotcom.png?raw=true", columns=100)
+    except OSError as e:
+        print(f"Could not load the image, server said: {e.code} {e.msg}")
+    ascii_magic.to_terminal(my_art)
+    raise typer.Exit()
+
+
+def exampleprint() -> None:
+    """Print the version of the package."""
+    data = requests.get("https://raw.githubusercontent.com/SilkePilon/youdotcom/main/examples/youchat.py")
+    console.print(f"status code: {data.status_code}\nCode:\n{data.text}")
+    raise typer.Exit()
 
 
 def version_callback(print_version: bool) -> None:
@@ -52,6 +62,15 @@ def main(
         callback=exampleprint,
         is_eager=True,
         help="Prints the example code.",
+    ),
+    logo: bool = typer.Option(
+        None,
+        "-icon",
+        "-logo",
+        "--logo",
+        callback=logo,
+        is_eager=True,
+        help="Prints the nice logo of YouDotCom",
     ),
     print_version: bool = typer.Option(
         None,

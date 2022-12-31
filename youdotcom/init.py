@@ -23,7 +23,11 @@ chromedriver_autoinstaller.install()
 
 class Init:
     """
-    An unofficial Python wrapper for YOU.com YOUCHAT
+    Start the webdriver\n
+    Parameters:
+    - proxy: the proxy you want to use\n
+    - webdriver_path: pass a localy installed chrome webdriver\n
+    Returns a `variable` with the driver
     """
 
     def __init__(
