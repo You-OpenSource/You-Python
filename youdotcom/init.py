@@ -115,7 +115,7 @@ lssll{ESDMWHP77LJfw
 v)#WQQ0RMR00&bQRmjT     YouDotCom - [error]
 v)#WQQ0RMR00&bQRmjT
 {rYQQBGO&&8AYNQQAL#
-joSMQG$0QRR00Q0WqTC  Made my Silke Pilon on GitHub
+joSMQG$0QRR00Q0WqTC  Made by Silke Pilon on GitHub
 22f6SqMQQWUO8m62Cff
 mqmF5FOBMRWY&FFpmmF
 3pF5222FmghhSghhhSm
@@ -127,7 +127,7 @@ mqmF5FOBMRWY&FFpmmF
                 if index == 3:
                     print(f"{Fore.RESET}| " + line + f"{Fore.RESET}     YouDotCom - {version}")
                 if index == 5:
-                    print(f"{Fore.RESET}| " + line + f"{Fore.RESET}  Made my Silke Pilon on GitHub")
+                    print(f"{Fore.RESET}| " + line + f"{Fore.RESET}  Made by Silke Pilon on GitHub")
                 else:
                     print(f"{Fore.RESET}| " + line)
                 index += 1

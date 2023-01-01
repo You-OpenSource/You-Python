@@ -46,7 +46,7 @@ def logo() -> None:
         if index == 3:
             print(f"{Fore.RESET}| " + line + f"{Fore.RESET}     YouDotCom - {version}")
         if index == 5:
-            print(f"{Fore.RESET}| " + line + f"{Fore.RESET}  Made my Silke Pilon on GitHub")
+            print(f"{Fore.RESET}| " + line + f"{Fore.RESET}  Made by Silke Pilon on GitHub")
         else:
             print(f"{Fore.RESET}| " + line)
         index += 1

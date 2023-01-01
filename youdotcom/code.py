@@ -9,6 +9,7 @@ import chromedriver_autoinstaller
 import markdownify
 import undetected_chromedriver as uc
 import urllib3
+from bs4 import BeautifulSoup
 from pyvirtualdisplay import Display
 from selenium.common import exceptions as SeleniumExceptions
 from selenium.webdriver.common.action_chains import ActionChains
@@ -20,7 +21,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 urllib3.disable_warnings()
 
 
-class Chat:
+class Code:
     """
     An unofficial Python wrapper for YOU.com YOUCHAT
     """
@@ -35,7 +36,7 @@ class Chat:
     #     self.__verbose = verbose
     #     self.__driver = driver
 
-    def send_message(driver, message: str) -> dict:
+    def find_code(driver, search: str) -> dict:
 
         """
         Send a message to YouChat\n
@@ -49,38 +50,21 @@ class Chat:
         start = time.time()
         # Ensure that the Cloudflare cookies is still valid
 
-        driver.get("https://you.com/search?q=" + message + "&tbm=youchat")
+        driver.get("https://you.com/search?q=" + search + "&tbm=youcode")
 
         # Send the message
 
-        WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.TAG_NAME, "textarea")))
-        textbox = driver.find_element(By.TAG_NAME, "textarea")
-
-        # Sending emoji (from https://stackoverflow.com/a/61043442)
-        textbox.click()
-        driver.execute_script(
-            """
-        var element = arguments[0], txt = arguments[1];
-        element.value += txt;
-        element.dispatchEvent(new Event('change'));
-        """,
-            textbox,
-            message,
-        )
-        textbox.send_keys(Keys.ENTER)
-
-        # Wait for the response to be ready
-
-        WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, '//*[@id="chatHistory"]/div/div[2]/p/p')))
-
+        WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.TAG_NAME, "main")))
+        WebDriverWait(driver, 7).until(EC.presence_of_element_located((By.XPATH, '//*[@data-eventactiontitle="Copy Button"]')))
         # Get the response element
 
-        response = driver.find_element(By.XPATH, '//*[@id="chatHistory"]/div/div[2]')
+        response = driver.find_elements(By.XPATH, '//*[@data-eventactiontitle="Copy Button"]')
 
         # Check if the response is an error
 
         # Return the response
-        msg = markdownify.markdownify(response.text)
+
+        # msg = markdownify.markdownify(response.text)
 
         # type(headers) == str
 
@@ -93,10 +77,11 @@ class Chat:
         #             break
         #     except:
         #         continue
+
+        msg = []
+        for code in response:
+            msg.append(str(code.get_attribute("data-eventactioncontent")))
+
         timedate = time.time() - start
         timedate = time.strftime("%S", time.gmtime(timedate))
-        if "Oops, I’m still learning and I couldn’t generate an answer right now. Please try again." in msg:
-            error = True
-        else:
-            error = False
-        return {"message": msg, "time": str(timedate), "error": str(error)}
+        return {"response": msg, "time": str(timedate)}
