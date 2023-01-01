@@ -36,9 +36,17 @@
 <!-- ![screenshot](https://raw.githubusercontent.com/SilkePilon/youdotcom/main/assets/images/YouDotCom.jpg) -->
 
 ## About
-So, about YouDotCom. YouDotCom was made to help developers with interacting with you.com and developing applications for all of its apps.
-YouDotCom allows developers to simpley import and use all of you.com apps.
+Welcome to the YouDotCom Python Library!
 
+This library allows users to easily access and utilize all of the functionality of the You.com platform through a simple and intuitive Python interface. With the library, users can access a variety of You.com apps and services, including but not limited to:
+
+* YouChat
+* YouCode
+
+To get started with the YouDotCom Python Library, simply <a href="#install">install</a> the package using pip and import it into your Python script. From there, you can use the provided functions and classes to easily interact with the You.com platform.
+
+We hope you enjoy using the You.com Python Library and all of the features it has to offer!
+> by Chat GPT
 ## Key Features
 * Bypass CloudFlare
 * Interact with YouChat
