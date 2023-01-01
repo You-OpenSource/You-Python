@@ -35,6 +35,8 @@
 
 ## Key Features
 * Bypass CloudFlare
+* Interact with YouChat
+* Find code examples
 * Server ready
   - Supports non-gui operating systems.
 * Cross platform
