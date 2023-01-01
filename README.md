@@ -44,7 +44,7 @@
 
 ## How To Use
 
-First you need to <a href="#install">Install</a> YouDotCom, then as example code for YouChat:
+First you need to <a href="#install">Install</a> YouDotCom, below are some examples of how to use YouDotCom:
 > :warning: **Warning!**
 > Do not spam or harm the you.com servers in any way!
 <details>
