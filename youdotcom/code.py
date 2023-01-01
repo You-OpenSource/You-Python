@@ -81,7 +81,7 @@ class Code:
         msg = []
         for code in response:
             msg.append(str(code.get_attribute("data-eventactioncontent")))
-
+        msg = list(dict.fromkeys(msg))
         timedate = time.time() - start
         timedate = time.strftime("%S", time.gmtime(timedate))
         return {"response": msg, "time": str(timedate)}
