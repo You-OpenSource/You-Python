@@ -136,8 +136,8 @@ Once the installation is complete, you can use the youdotcom package in your Pyt
 import youdotcom
 ```
 ## Discord
+In addition to the YouDotCom Python Library, we also have an active [Discord server](https://discord.gg/SD7wZMFSvV) where you can chat with developers and get help with using the library. Our Discord community is a great place to ask questions, share your projects, and get feedback from other developers.
 
-YouDotCom also has an official [discord server](https://discord.gg/SD7wZMFSvV), chat and help developers with there projects!
 
 ## Credits
 
