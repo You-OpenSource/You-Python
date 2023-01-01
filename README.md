@@ -43,7 +43,7 @@
 ## How To Use
 
 First you need to <a href="#install">Install</a> YouDotCom, then as example code for YouChat:
-> **Warning!**
+> :warning: **Warning!**
 > Do not spam or harm the you.com servers in any way!
 <details>
 <summary>YouChat example</summary>
