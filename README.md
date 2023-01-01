@@ -25,6 +25,7 @@
 </div>
 
 <p align="center">
+  <a href="#about">About</a> •
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#install">Install</a> •
@@ -33,6 +34,8 @@
 </p>
 
 <!-- ![screenshot](https://raw.githubusercontent.com/SilkePilon/youdotcom/main/assets/images/YouDotCom.jpg) -->
+
+## About
 
 ## Key Features
 * Bypass CloudFlare
