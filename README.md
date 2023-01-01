@@ -114,6 +114,14 @@ for string in code['response']: # loop through all the code
 print(code['time']) # print the time taken to complete you search.
 ```
   
+This code imports the Code and Init classes from the youdotcom library. The Code class is used to search for code snippets, while the Init class is used to set up a webdriver.
+
+First, the Init class is instantiated with Init(). The driver attribute of the resulting object is then stored in the driver variable. The driver attribute returns a webdriver object that can be used to automate web browsing tasks.
+
+Next, the find_code method of the Code class is called with driver and a search string as arguments. This method searches for code snippets related to the specified search string using the webdriver. The result of the method call is stored in the code variable.
+
+The code variable is a dictionary containing a list of code snippets in the response field and the time taken to complete the search in the time field. The code then loops through the response list and prints each code snippet to the console one at a time. Finally, the time taken to complete the search is printed to the console.
+  
 </details>
 
 or use:
