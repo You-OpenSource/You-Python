@@ -110,7 +110,9 @@ print(code['time']) # print the time taken to complete you search.
 
 or use:
 
-```youdotcom -example```
+```
+youdotcom -example
+```
 
 > **Note**
 > YouDotCom is in Alpha and there will be bugs!
