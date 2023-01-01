@@ -45,7 +45,9 @@
 First you need to <a href="#install">Install</a> YouDotCom, then as example code for YouChat:
 > **Warning!**
 > Do not spam or harm the you.com servers in any way!
-
+<details>
+<summary>YouChat example</summary>
+<br>
 ```python
 from youdotcom.init import Init  # import the Init class
 from youdotcom.youchat import Chat  # import YouChat
@@ -60,6 +62,8 @@ driver.close()  # close the webdriver
 
 print(chat)  # {'message': "It's been great! How about yours?", 'time': '11', 'error': 'False'}
 ```
+</details>
+
 or use:
 
 ```youdotcom -example```
