@@ -58,7 +58,7 @@ We hope you enjoy using the You.com Python Library and all of the features it ha
 
 ## How To Use
 
-To help users get started with the You.com Python Library, we have provided a selection of code examples that demonstrate common use cases for the library. These examples can be found in the documentation and cover a range of functionality, from user management to data storage and messaging.
+To help users get started with the You.com Python Library, we have provided a selection of code examples that demonstrate common use cases for the library. These examples can be found in the documentation and cover a range of functionality.
 
 To use the code examples, simply copy and paste the relevant code into your Python script and customize it to fit your specific needs. You can also use the examples as a starting point for your own code, using them as a guide to understand how the library functions can be used to build your own applications and integrations with the You.com platform.
 
