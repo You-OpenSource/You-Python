@@ -66,6 +66,26 @@ print(chat)  # {'message': "It's been great! How about yours?", 'time': '11', 'e
   
 </details>
 
+<details>
+<summary>YouCode example</summary>
+<br>
+  
+```python
+from youdotcom.code import Code # import the YouCode class.
+from youdotcom.init import Init # import the webdriver
+
+driver = Init().driver # setting up the webdriver. use `webdriver_path=` if the pre-installed one does not work.
+
+code = Code.find_code(driver, search="how to make an python loop?") # get all the code displayed on screen. passing the driver and search string.
+
+for string in code['response']: # loop through all the code
+    print(string) # print 1 at an time.
+    
+print(code['time']) # print the time taken to complete you search.
+```
+  
+</details>
+
 or use:
 
 ```youdotcom -example```
