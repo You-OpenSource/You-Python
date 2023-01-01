@@ -36,6 +36,8 @@
 <!-- ![screenshot](https://raw.githubusercontent.com/SilkePilon/youdotcom/main/assets/images/YouDotCom.jpg) -->
 
 ## About
+So, about YouDotCom. YouDotCom was made to help developers with interacting with you.com and developing applications for all of its apps.
+YouDotCom allows developers to simpley import and use all of you.com apps.
 
 ## Key Features
 * Bypass CloudFlare
