@@ -67,7 +67,7 @@ print(chat)  # {'message': "It's been great! How about yours?", 'time': '11', 'e
 </details>
 
 <details>
-<summary>YouCode example</summary>
+<summary>YouCode (only code search for now) example</summary>
 <br>
   
 ```python
