@@ -118,8 +118,21 @@ or use:
 
 ## install
 
-```pip install youdotcom --upgrade```
+To install the YouDotCom Python Library, use the following command:
 
+```
+pip install youdotcom
+```
+This will install the latest version of the youdotcom package. To install a specific version, use:
+
+```
+pip install youdotcom==0.3.0
+```
+Once the installation is complete, you can use the youdotcom package in your Python scripts by importing it:
+
+```python
+import youdotcom
+```
 ## Discord
 
 YouDotCom also has an official [discord server](https://discord.gg/SD7wZMFSvV), chat and help developers with there projects!
