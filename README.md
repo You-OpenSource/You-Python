@@ -151,6 +151,16 @@ Once the installation is complete, you can use the youdotcom package in your Pyt
 ```python
 import youdotcom
 ```
+
+## YouDotCom roadmap
+* [x] add youchat
+* [x] add youcode
+* [ ] swith to using you.com/api
+* [ ] make code faster
+* [ ] add code translate 
+* [ ] add all of you.com apps
+
+
 ## Discord
 In addition to the YouDotCom Python Library, we also have an active [Discord server](https://discord.gg/SD7wZMFSvV) where you can chat with developers and get help with using the library. Our Discord community is a great place to ask questions, share your projects, and get feedback from other developers.
 
