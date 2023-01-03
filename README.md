@@ -72,8 +72,7 @@ We hope that these code examples will make it easier for users to get up and run
 <br>
   
 ```python
-from youdotcom.init import Init  # import the Init class
-from youdotcom.youchat import Chat  # import YouChat
+from youdotcom import Init, Chat # import all the classes
 
 driver = Init().driver  # setting up the webdriver. use `webdriver_path=` if the pre-installed one does not work.
 
@@ -101,8 +100,7 @@ Finally, the webdriver is closed with driver.close(), and the value of chat is p
 <br>
   
 ```python
-from youdotcom.code import Code # import the YouCode class.
-from youdotcom.init import Init # import the webdriver
+from youdotcom import Init, Code # import all the classes
 
 driver = Init().driver # setting up the webdriver. use `webdriver_path=` if the pre-installed one does not work.
 
