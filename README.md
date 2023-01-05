@@ -138,7 +138,7 @@ search_results = Search.search_for("how to make an python loop?") # search! No n
 
 print(search_results['results']) # print all the search results
 
-print(search_results['time']) # print the total time taken (les then 3 seconds)
+print(search_results['time']) # print the total time taken (les then 3 seconds on average)
 ```
   
 This code imports the Search class from the youdotcom module. It then calls the search_for method of the Search class, passing in the string "how to make an python loop?" as an argument. The search_for method returns a dictionary with two keys: results and time. The code then prints the value associated with the results key, which is a list of search results. It also prints the value associated with the time key, which is the total time taken to perform the search.
