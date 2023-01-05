@@ -70,8 +70,10 @@ We hope that these code examples will make it easier for users to get up and run
 <details>
 <summary>YouChat example</summary>
 <br>
+
 > **Note**
 > YouChat is currently disabled because you.com does not yet support the trafic yet.
+
 
 ```python
 from youdotcom import Init, Chat # import all the classes
