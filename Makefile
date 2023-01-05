@@ -27,6 +27,16 @@ install:
 update:
 	poetry lock --no-update
 
+.PHONY: publish
+publish:
+	poetry version patch
+	poetry publish --build
+	python3 update.py
+	git add .
+	git commit -m 'overall update'
+	git push
+
+
 .PHONY: pre-commit-install
 pre-commit-install:
 	poetry run pre-commit install
