@@ -3,7 +3,9 @@ import json
 import os
 import platform
 import re
+import sys
 import time
+from importlib import metadata as importlib_metadata
 
 import ascii_magic
 import chromedriver_autoinstaller
@@ -18,8 +20,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-
-from youdotcom import version
 
 urllib3.disable_warnings()
 chromedriver_autoinstaller.install()
@@ -121,6 +121,10 @@ mqmF5FOBMRWY&FFpmmF
 3pF5222FmghhSghhhSm
                 """
             my_art = my_art.split("\n")
+            try:
+                version = importlib_metadata.version(__name__)
+            except importlib_metadata.PackageNotFoundError:  # pragma: no cover
+                version = "unknown"
             index = 0
             for line in my_art:
                 line = line.replace("\n", "")

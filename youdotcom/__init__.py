@@ -4,6 +4,12 @@
 import sys
 from importlib import metadata as importlib_metadata
 
+from .apps import Apps
+
+# from .youchat import Chat
+from .code import Code
+from .init import Init
+
 
 def get_version() -> str:
     try:
@@ -12,4 +18,4 @@ def get_version() -> str:
         return "unknown"
 
 
-version: str = get_version()
+__all__ = ["YouDotCom"]

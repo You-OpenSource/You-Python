@@ -57,21 +57,21 @@ class Chat:
         textbox = driver.find_element(By.TAG_NAME, "textarea")
 
         # Sending emoji (from https://stackoverflow.com/a/61043442)
-        textbox.click()
-        driver.execute_script(
-            """
-        var element = arguments[0], txt = arguments[1];
-        element.value += txt;
-        element.dispatchEvent(new Event('change'));
-        """,
-            textbox,
-            message,
-        )
-        textbox.send_keys(Keys.ENTER)
+        # textbox.click()
+        # driver.execute_script(
+        #     """
+        # var element = arguments[0], txt = arguments[1];
+        # element.value += txt;
+        # element.dispatchEvent(new Event('change'));
+        # """,
+        #     textbox,
+        #     message,
+        # )
+        # textbox.send_keys(Keys.ENTER)
 
         # Wait for the response to be ready
 
-        WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, '//*[@id="chatHistory"]/div/div[2]/p/p')))
+        WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.XPATH, '//*[@id="chatHistory"]/div/div[2]/p/p')))
 
         # Get the response element
 
