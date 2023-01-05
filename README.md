@@ -40,6 +40,7 @@ Welcome to the YouDotCom Python Library!
 
 This library allows users to easily access and utilize all of the functionality of the You.com platform through a simple and intuitive Python interface. With the library, users can access a variety of You.com apps and services, including but not limited to:
 
+* Search
 * ~~YouChat~~ (not suppoted yet by the you.com servers)
 * YouCode
 
@@ -123,6 +124,24 @@ First, the Init class is instantiated with Init(). The driver attribute of the r
 Next, the find_code method of the Code class is called with driver and a search string as arguments. This method searches for code snippets related to the specified search string using the webdriver. The result of the method call is stored in the code variable.
 
 The code variable is a dictionary containing a list of code snippets in the response field and the time taken to complete the search in the time field. The code then loops through the response list and prints each code snippet to the console one at a time. Finally, the time taken to complete the search is printed to the console.
+  
+</details>
+
+<details>
+<summary>Search example</summary>
+<br>
+  
+```python
+from youdotcom import Search # import the Search class
+
+search_results = Search.search_for("how to make an python loop?") # search! No need to use the Init class.
+
+print(search_results['results']) # print all the search results
+
+print(search_results['time']) # print the total time taken (les then 3 seconds)
+```
+  
+This code imports the Search class from the youdotcom module. It then calls the search_for method of the Search class, passing in the string "how to make an python loop?" as an argument. The search_for method returns a dictionary with two keys: results and time. The code then prints the value associated with the results key, which is a list of search results. It also prints the value associated with the time key, which is the total time taken to perform the search.
   
 </details>
 
