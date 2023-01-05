@@ -4,7 +4,7 @@
   <a href="https://github.com/SilkePilon/youdotcom/"><img src="https://github.com/SilkePilon/youdotcom/blob/main/youdotcom.png?raw=true" alt="Markdownify" width="200"></a>
   <br>
   <br>
-  YouDotCom for python
+  YouDotCom for python v1.0.4
   <br>
 </h1>
 
@@ -198,5 +198,3 @@ This software uses the following open source packages:
 MIT
 
 ---
-
-
