@@ -51,7 +51,7 @@ We hope you enjoy using the YouDotCom Python Library and all of the features it 
 
 ## Key Features
 * Bypass CloudFlare
-* Interact with YouChat
+* ~~Interact with YouChat~~
 * Find code examples
 * Server ready
   - Supports non-gui operating systems.
