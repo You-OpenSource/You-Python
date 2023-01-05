@@ -9,6 +9,7 @@ from .apps import Apps
 # from .youchat import Chat
 from .code import Code
 from .init import Init
+from .search import Search
 
 
 def get_version() -> str:

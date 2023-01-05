@@ -164,6 +164,19 @@ python-versions = ">=3.6"
 colorama = {version = "*", markers = "platform_system == \"Windows\""}
 
 [[package]]
+name = "cloudscraper"
+version = "1.2.66"
+description = "A Python module to bypass Cloudflare's anti-bot page."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+pyparsing = ">=2.4.7"
+requests = ">=2.9.2"
+requests-toolbelt = ">=0.9.1"
+
+[[package]]
 name = "colorama"
 version = "0.4.6"
 description = "Cross-platform colored terminal text."
@@ -570,7 +583,7 @@ testutils = ["gitpython (>3)"]
 name = "pyparsing"
 version = "3.0.9"
 description = "pyparsing module - Classes and methods to define and execute parsing grammars"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6.8"
 
@@ -688,6 +701,17 @@ urllib3 = ">=1.21.1,<1.27"
 [package.extras]
 socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use_chardet_on_py3 = ["chardet (>=3.0.2,<6)"]
+
+[[package]]
+name = "requests-toolbelt"
+version = "0.10.1"
+description = "A utility belt for advanced users of python-requests"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[package.dependencies]
+requests = ">=2.0.1,<3.0.0"
 
 [[package]]
 name = "rich"
@@ -993,7 +1017,7 @@ h11 = ">=0.9.0,<1"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "4e7a6573577209dc70c48a86ee32265cf967b8f3f87b2e2626988cf74ecf3c4d"
+content-hash = "40cecabeddab4630b92147929b2585579d0431d3c583e6ea473576907707cf63"
 
 [metadata.files]
 ascii-magic = []
@@ -1009,6 +1033,7 @@ cfgv = []
 charset-normalizer = []
 chromedriver-autoinstaller = []
 click = []
+cloudscraper = []
 colorama = []
 commonmark = []
 coverage = []
@@ -1055,6 +1080,7 @@ pyupgrade = []
 pyvirtualdisplay = []
 pyyaml = []
 requests = []
+requests-toolbelt = []
 rich = []
 "ruamel.yaml" = []
 "ruamel.yaml.clib" = []
