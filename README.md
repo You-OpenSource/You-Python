@@ -72,7 +72,7 @@ We hope that these code examples will make it easier for users to get up and run
 <br>
 
 > **Note**
-> YouChat is currently disabled because you.com does not yet support the trafic yet.
+> YouChat is currently disabled because you.com does not yet support the trafic.
 
 
 ```python
