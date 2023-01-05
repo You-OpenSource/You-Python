@@ -155,10 +155,11 @@ mqmF5FOBMRWY&FFpmmF
             options.add_argument(f"--proxy-server={self.__proxy}")
         try:
             self.__verbose_print("[init] Starting browser")
+            # self.driver = uc.Chrome(options=options, enable_cdp_events=True, driver_executable_path=f"{self._webdriver_path}")
             if self._webdriver_path:
-                self.driver = uc.Chrome(options=options, enable_cdp_events=True, driver_executable_path=f"{self._webdriver_path}")
+                self.driver = uc.Chrome(options=options, driver_executable_path=f"{self._webdriver_path}")
             else:
-                self.driver = uc.Chrome(options=options, enable_cdp_events=True)
+                self.driver = uc.Chrome(options=options)
         except TypeError as e:
             if str(e) == "expected str, bytes or os.PathLike object, not NoneType":
                 raise ValueError("Chrome installation not found")
