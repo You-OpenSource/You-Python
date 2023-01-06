@@ -185,12 +185,6 @@ This code imports the Write class from the youdotcom module. It then calls the w
   
 </details>
 
-or use:
-
-```
-youdotcom -example
-```
-
 > **Note**
 > YouDotCom is in Alpha and there will be bugs!
 
