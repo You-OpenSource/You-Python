@@ -114,7 +114,7 @@ class Code:
         }
         msg = scraper.post("https://you.com/api/codex", json=json_data).text
         msg = json.loads(msg)
-        # msg = msg["text"]
+        msg = msg["text"]
         timedate = time.time() - start
         timedate = time.strftime("%S", time.gmtime(timedate))
         return {"response": msg, "time": str(timedate)}
