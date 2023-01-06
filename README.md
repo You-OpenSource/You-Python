@@ -104,7 +104,9 @@ Finally, the webdriver is closed with driver.close(), and the value of chat is p
 <details>
 <summary>YouCode example</summary>
 <br>
-Find Code
+<p align="center">
+Find code
+</p>
   
 ```python
 from youdotcom import Init, Code # import all the classes
@@ -129,7 +131,9 @@ The code variable is a dictionary containing a list of code snippets in the resp
   
 ---
   
-Generate Code
+<p align="center">
+Generate code
+</p>
 
 ```python
 from youdotcom import Code # import the write class 
