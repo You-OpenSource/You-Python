@@ -4,7 +4,7 @@
   <a href="https://github.com/SilkePilon/youdotcom/"><img src="https://github.com/SilkePilon/youdotcom/blob/main/youdotcom.png?raw=true" alt="Markdownify" width="200"></a>
   <br>
   <br>
-  YouDotCom for python v1.0.11
+  YouDotCom for python v1.0.13
   <br>
 </h1>
 

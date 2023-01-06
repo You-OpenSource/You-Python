@@ -3,6 +3,7 @@ import json
 import os
 import platform
 import re
+import shutil
 import time
 
 import cloudscraper
@@ -46,7 +47,15 @@ class Imagine:
         start = time.time()
         scraper = cloudscraper.create_scraper()
         data = '{"url":"api/stableDiffusion","headers":{},"data":{"prompt":"' + message + '"},"appName":"stable_diffusion"}'
-        msg = scraper.post("https://you.com/api/template_api", data=data).text
+        msg = scraper.post("https://you.com/api/template_api", data=data)
+        if msg.status_code == 200:
+            with open("image.png", "wb") as f:
+                msg.raw.decode_content = True
+                shutil.copyfileobj(msg.raw, f)
+        if "<!DOCTYPE html>" in msg.text:
+            msg = "error, gateway time-out"
+        else:
+            msg = "image.png"
         timedate = time.time() - start
         timedate = time.strftime("%S", time.gmtime(timedate))
-        return {"image": msg, "time": str(timedate)}
+        return {"image_name": msg, "time": str(timedate)}
