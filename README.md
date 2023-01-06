@@ -104,7 +104,7 @@ Finally, the webdriver is closed with driver.close(), and the value of chat is p
 <details>
 <summary>YouCode example</summary>
 <br>
-## Find Code  
+**Find Code**
   
 ```python
 from youdotcom import Init, Code # import all the classes
@@ -126,6 +126,21 @@ First, the Init class is instantiated with Init(). The driver attribute of the r
 Next, the find_code method of the Code class is called with driver and a search string as arguments. This method searches for code snippets related to the specified search string using the webdriver. The result of the method call is stored in the code variable.
 
 The code variable is a dictionary containing a list of code snippets in the response field and the time taken to complete the search in the time field. The code then loops through the response list and prints each code snippet to the console one at a time. Finally, the time taken to complete the search is printed to the console.
+  
+  
+** Generate Code**
+
+```python
+from youdotcom import Code # import the write class 
+
+text = Code.gen_code("python loop") # make an api call
+
+print(text['response']) # print the AI made code
+
+print(text['time']) # print total time taken to complete your request
+```
+  
+This code imports the Code class from the youdotcom module. It then calls the gen_code method of the Code class, passing in the string "python loop" as an argument. The gen_code method makes an API call and returns a dictionary with two keys: response and time. The code then prints the value associated with the response key, which is the AI-generated code. It also prints the value associated with the time key, which is the total time taken to complete the request.
   
 </details>
 
