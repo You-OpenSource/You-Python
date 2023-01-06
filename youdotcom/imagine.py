@@ -47,7 +47,7 @@ class Imagine:
         start = time.time()
         scraper = cloudscraper.create_scraper()
         data = '{"url":"api/stableDiffusion","headers":{},"data":{"prompt":"' + message + '"},"appName":"stable_diffusion"}'
-        msg = scraper.post("https://you.com/api/template_api", data=data)
+        msg = scraper.get("https://you.com/api/template_api", data=data, stream=True)
         if msg.status_code == 200:
             with open("image.png", "wb") as f:
                 msg.raw.decode_content = True
