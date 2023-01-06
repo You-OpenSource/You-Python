@@ -104,7 +104,7 @@ Finally, the webdriver is closed with driver.close(), and the value of chat is p
 <details>
 <summary>YouCode example</summary>
 <br>
-**Find Code**
+Find Code
   
 ```python
 from youdotcom import Init, Code # import all the classes
@@ -127,8 +127,9 @@ Next, the find_code method of the Code class is called with driver and a search 
 
 The code variable is a dictionary containing a list of code snippets in the response field and the time taken to complete the search in the time field. The code then loops through the response list and prints each code snippet to the console one at a time. Finally, the time taken to complete the search is printed to the console.
   
+---
   
-** Generate Code**
+Generate Code
 
 ```python
 from youdotcom import Code # import the write class 
