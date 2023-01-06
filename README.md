@@ -78,9 +78,9 @@ We hope that these code examples will make it easier for users to get up and run
 
 
 ```python
-from youdotcom import Init, Chat # import all the classes
+from youdotcom import Webdriver, Chat # import all the classes
 
-driver = Init().driver  # setting up the webdriver. use `webdriver_path=` if the pre-installed one does not work.
+driver = Webdriver().driver  # setting up the webdriver. use `webdriver_path=` if the pre-installed one does not work.
 
 
 chat = Chat.send_message(driver=driver, message="how is your day?")  # send a message to YouChat. passing the driver and messages
@@ -91,9 +91,9 @@ driver.close()  # close the webdriver
 print(chat)  # {'message': "It's been great! How about yours?", 'time': '11', 'error': 'False'}
 ```
 
-This code imports two classes from the youdotcom library: Init and Chat. The Init class is used to set up a webdriver, which is a tool that allows you to automate web browsing tasks. The Chat class is used to send a message to the YouChat service.
+This code imports two classes from the youdotcom library: Webdriver and Chat. The Webdriver class is used to set up a webdriver, which is a tool that allows you to automate web browsing tasks. The Chat class is used to send a message to the YouChat service.
 
-First, the Init class is instantiated with Init(). The driver attribute of the resulting object is then stored in the driver variable. The driver attribute returns a webdriver object that can be used to automate web browsing tasks.
+First, the Webdriver class is instantiated with Webdriver(). The driver attribute of the resulting object is then stored in the driver variable. The driver attribute returns a webdriver object that can be used to automate web browsing tasks.
 
 Next, the send_message method of the Chat class is called with driver and a message as arguments. This method sends the specified message to the YouChat service using the webdriver. The result of the method call is stored in the chat variable.
 
@@ -109,9 +109,9 @@ Find code
 </p>
   
 ```python
-from youdotcom import Init, Code # import all the classes
+from youdotcom import Webdriver, Code # import all the classes
 
-driver = Init().driver # setting up the webdriver. use `webdriver_path=` if the pre-installed one does not work.
+driver = Webdriver().driver # setting up the webdriver. use `webdriver_path=` if the pre-installed one does not work.
 
 code = Code.find_code(driver, search="how to make an python loop?") # get all the code displayed on screen. passing the driver and search string.
 
@@ -121,9 +121,9 @@ for string in code['response']: # loop through all the code
 print(code['time']) # print the time taken to complete you search.
 ```
   
-This code imports the Code and Init classes from the youdotcom library. The Code class is used to search for code snippets, while the Init class is used to set up a webdriver.
+This code imports the Code and Webdriver classes from the youdotcom library. The Code class is used to search for code snippets, while the Webdriver class is used to set up a webdriver.
 
-First, the Init class is instantiated with Init(). The driver attribute of the resulting object is then stored in the driver variable. The driver attribute returns a webdriver object that can be used to automate web browsing tasks.
+First, the Webdriver class is instantiated with Webdriver(). The driver attribute of the resulting object is then stored in the driver variable. The driver attribute returns a webdriver object that can be used to automate web browsing tasks.
 
 Next, the find_code method of the Code class is called with driver and a search string as arguments. This method searches for code snippets related to the specified search string using the webdriver. The result of the method call is stored in the code variable.
 
@@ -156,7 +156,7 @@ This code imports the Code class from the youdotcom module. It then calls the ge
 ```python
 from youdotcom import Search # import the Search class
 
-search_results = Search.search_for("how to make an python loop?") # search! No need to use the Init class.
+search_results = Search.search_for("how to make an python loop?") # search! No need to use the Webdriver class.
 
 print(search_results['results']) # print all the search results
 
