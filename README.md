@@ -102,8 +102,9 @@ Finally, the webdriver is closed with driver.close(), and the value of chat is p
 </details>
 
 <details>
-<summary>YouCode (only code search for now) example</summary>
+<summary>YouCode example</summary>
 <br>
+# Find Code  
   
 ```python
 from youdotcom import Init, Code # import all the classes
