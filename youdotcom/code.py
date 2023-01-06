@@ -6,6 +6,7 @@ import re
 import time
 
 import chromedriver_autoinstaller
+import cloudscraper
 import markdownify
 import undetected_chromedriver as uc
 import urllib3
@@ -82,6 +83,38 @@ class Code:
         for code in response:
             msg.append(str(code.get_attribute("data-eventactioncontent")))
         msg = list(dict.fromkeys(msg))
+        timedate = time.time() - start
+        timedate = time.strftime("%S", time.gmtime(timedate))
+        return {"response": msg, "time": str(timedate)}
+
+    def gen_code(message: str) -> dict:
+        """
+        Search on You.com\n
+        Parameters:
+        - message: The message you want to send\n
+        Returns a `dict` with the following keys:
+        - all the data!
+        """
+        start = time.time()
+        scraper = cloudscraper.create_scraper()
+        json_data = {
+            "engine": "cushman-codex",
+            "prompt": f"{message}",
+            "get_rate_limit": False,
+            "temperature": 0.35,
+            "max_tokens": 512,
+            "top_p": 1,
+            "best_of": 3,
+            "frequency_penalty": 0.8,
+            "presence_penalty": 0.8,
+            "stop": [
+                "\\n",
+            ],
+            "version": 2,
+        }
+        msg = scraper.post("https://you.com/api/codex", json=json_data).text
+        msg = json.loads(msg)
+        # msg = msg["text"]
         timedate = time.time() - start
         timedate = time.strftime("%S", time.gmtime(timedate))
         return {"response": msg, "time": str(timedate)}
