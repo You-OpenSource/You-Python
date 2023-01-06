@@ -47,15 +47,11 @@ class Imagine:
         start = time.time()
         scraper = cloudscraper.create_scraper()
         data = '{"url":"api/stableDiffusion","headers":{},"data":{"prompt":"' + message + '"},"appName":"stable_diffusion"}'
-        msg = scraper.get("https://you.com/api/template_api", data=data, timeout=(27, 27))
-        if msg.status_code == 200:
-            with open("image.png", "wb") as f:
-                msg.raw.decode_content = True
-                shutil.copyfileobj(msg.raw, f)
-        if "<!DOCTYPE html>" in msg.text:
-            msg = "error, gateway time-out"
-        else:
-            msg = "image.png"
+        msg = scraper.get("https://you.com/api/template_api", data=data, timeout=30).text
+        # if "<!DOCTYPE html>" in msg.text:
+        #     msg = "error, gateway time-out"
+        # else:
+        #     msg = "image.png"
         timedate = time.time() - start
         timedate = time.strftime("%S", time.gmtime(timedate))
         return {"image_name": msg, "time": str(timedate)}

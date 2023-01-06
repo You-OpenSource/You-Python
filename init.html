@@ -31,12 +31,16 @@ import json
 import os
 import platform
 import re
+import sys
 import time
+from importlib import metadata as importlib_metadata
 
+import ascii_magic
 import chromedriver_autoinstaller
 import markdownify
 import undetected_chromedriver as uc
 import urllib3
+from colorama import Fore
 from pyvirtualdisplay import Display
 from selenium.common import exceptions as SeleniumExceptions
 from selenium.webdriver.common.action_chains import ActionChains
@@ -51,19 +55,18 @@ chromedriver_autoinstaller.install()
 
 class Init:
     &#34;&#34;&#34;
-    An unofficial Python wrapper for YOU.com YOUCHAT
+    Start the webdriver\n
+    Parameters:
+    - proxy: the proxy you want to use\n
+    - webdriver_path: pass a localy installed chrome webdriver\n
+    Returns a `variable` with the driver
     &#34;&#34;&#34;
 
-    def __init__(
-        self,
-        verbose: bool = False,
-        proxy: str = &#34;&#34;,
-        window_size: tuple = (800, 600),
-        webdriver_path: str = &#34;&#34;,
-    ) -&gt; None:
+    def __init__(self, verbose: bool = False, proxy: str = &#34;&#34;, window_size: tuple = (800, 600), webdriver_path: str = &#34;&#34;, hide: bool = False) -&gt; None:
 
         self.__verbose = verbose
         self.__proxy = proxy
+        self.__hide = hide
         if self.__proxy and not re.findall(r&#34;(https?|socks(4|5)?):\/\/.+:\d{1,5}&#34;, self.__proxy):
             raise ValueError(&#34;Invalid proxy format&#34;)
         self._webdriver_path = webdriver_path
@@ -127,6 +130,41 @@ class Init:
         &#34;&#34;&#34;
         Initialize the browser
         &#34;&#34;&#34;
+        if self.__hide == False:
+            print(f&#34;╭──────────────────────────────────────────────────────────────╮&#34;)
+            try:
+                my_art = ascii_magic.from_url(&#34;https://github.com/SilkePilon/youdotcom/raw/main/youdotcom.png?raw=true&#34;, columns=27, width_ratio=2.2)
+            except OSError as e:
+                print(f&#34;Could not load the image, server said: {e.code} {e.msg}&#34;)
+                my_art = &#34;&#34;&#34;
+sI?!!]]7LT#TnJf3525
+lssll{ESDMWHP77LJfw
+%%vIejbEkDQQBJyJ7u#
+v)#WQQ0RMR00&amp;bQRmjT     YouDotCom - [error]
+v)#WQQ0RMR00&amp;bQRmjT
+{rYQQBGO&amp;&amp;8AYNQQAL#
+joSMQG$0QRR00Q0WqTC  Made by Silke Pilon on GitHub
+22f6SqMQQWUO8m62Cff
+mqmF5FOBMRWY&amp;FFpmmF
+3pF5222FmghhSghhhSm
+                &#34;&#34;&#34;
+            my_art = my_art.split(&#34;\n&#34;)
+            try:
+                version = importlib_metadata.version(__name__)
+            except importlib_metadata.PackageNotFoundError:  # pragma: no cover
+                version = &#34;unknown&#34;
+            index = 0
+            for line in my_art:
+                line = line.replace(&#34;\n&#34;, &#34;&#34;)
+                if index == 3:
+                    print(f&#34;{Fore.RESET}| &#34; + line + f&#34;{Fore.RESET}     YouDotCom - {version}&#34;)
+                if index == 5:
+                    print(f&#34;{Fore.RESET}| &#34; + line + f&#34;{Fore.RESET}  Made by Silke Pilon on GitHub&#34;)
+                else:
+                    print(f&#34;{Fore.RESET}| &#34; + line)
+                index += 1
+            print(f&#34;╰──────────────────────────────────────────────────────────────╯&#34;)
+            print(&#34;To disable this message use &#39;hide=True&#39; in your Init class&#34;)
         # Detect if running on a headless server
         if self.__is_headless:
             try:
@@ -145,10 +183,11 @@ class Init:
             options.add_argument(f&#34;--proxy-server={self.__proxy}&#34;)
         try:
             self.__verbose_print(&#34;[init] Starting browser&#34;)
+            # self.driver = uc.Chrome(options=options, enable_cdp_events=True, driver_executable_path=f&#34;{self._webdriver_path}&#34;)
             if self._webdriver_path:
-                self.driver = uc.Chrome(options=options, enable_cdp_events=True, driver_executable_path=f&#34;{self._webdriver_path}&#34;)
+                self.driver = uc.Chrome(options=options, driver_executable_path=f&#34;{self._webdriver_path}&#34;)
             else:
-                self.driver = uc.Chrome(options=options, enable_cdp_events=True)
+                self.driver = uc.Chrome(options=options)
         except TypeError as e:
             if str(e) == &#34;expected str, bytes or os.PathLike object, not NoneType&#34;:
                 raise ValueError(&#34;Chrome installation not found&#34;)
@@ -175,29 +214,34 @@ class Init:
 <dl>
 <dt id="youdotcom.init.Init"><code class="flex name class">
 <span>class <span class="ident">Init</span></span>
-<span>(</span><span>verbose: bool = False, proxy: str = '', window_size: tuple = (800, 600), webdriver_path: str = '')</span>
+<span>(</span><span>verbose: bool = False, proxy: str = '', window_size: tuple = (800, 600), webdriver_path: str = '', hide: bool = False)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>An unofficial Python wrapper for YOU.com YOUCHAT</p></div>
+<div class="desc"><p>Start the webdriver</p>
+<p>Parameters:
+- proxy: the proxy you want to use</p>
+<ul>
+<li>webdriver_path: pass a localy installed chrome webdriver</li>
+</ul>
+<p>Returns a <code>variable</code> with the driver</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class Init:
     &#34;&#34;&#34;
-    An unofficial Python wrapper for YOU.com YOUCHAT
+    Start the webdriver\n
+    Parameters:
+    - proxy: the proxy you want to use\n
+    - webdriver_path: pass a localy installed chrome webdriver\n
+    Returns a `variable` with the driver
     &#34;&#34;&#34;
 
-    def __init__(
-        self,
-        verbose: bool = False,
-        proxy: str = &#34;&#34;,
-        window_size: tuple = (800, 600),
-        webdriver_path: str = &#34;&#34;,
-    ) -&gt; None:
+    def __init__(self, verbose: bool = False, proxy: str = &#34;&#34;, window_size: tuple = (800, 600), webdriver_path: str = &#34;&#34;, hide: bool = False) -&gt; None:
 
         self.__verbose = verbose
         self.__proxy = proxy
+        self.__hide = hide
         if self.__proxy and not re.findall(r&#34;(https?|socks(4|5)?):\/\/.+:\d{1,5}&#34;, self.__proxy):
             raise ValueError(&#34;Invalid proxy format&#34;)
         self._webdriver_path = webdriver_path
@@ -261,6 +305,41 @@ class Init:
         &#34;&#34;&#34;
         Initialize the browser
         &#34;&#34;&#34;
+        if self.__hide == False:
+            print(f&#34;╭──────────────────────────────────────────────────────────────╮&#34;)
+            try:
+                my_art = ascii_magic.from_url(&#34;https://github.com/SilkePilon/youdotcom/raw/main/youdotcom.png?raw=true&#34;, columns=27, width_ratio=2.2)
+            except OSError as e:
+                print(f&#34;Could not load the image, server said: {e.code} {e.msg}&#34;)
+                my_art = &#34;&#34;&#34;
+sI?!!]]7LT#TnJf3525
+lssll{ESDMWHP77LJfw
+%%vIejbEkDQQBJyJ7u#
+v)#WQQ0RMR00&amp;bQRmjT     YouDotCom - [error]
+v)#WQQ0RMR00&amp;bQRmjT
+{rYQQBGO&amp;&amp;8AYNQQAL#
+joSMQG$0QRR00Q0WqTC  Made by Silke Pilon on GitHub
+22f6SqMQQWUO8m62Cff
+mqmF5FOBMRWY&amp;FFpmmF
+3pF5222FmghhSghhhSm
+                &#34;&#34;&#34;
+            my_art = my_art.split(&#34;\n&#34;)
+            try:
+                version = importlib_metadata.version(__name__)
+            except importlib_metadata.PackageNotFoundError:  # pragma: no cover
+                version = &#34;unknown&#34;
+            index = 0
+            for line in my_art:
+                line = line.replace(&#34;\n&#34;, &#34;&#34;)
+                if index == 3:
+                    print(f&#34;{Fore.RESET}| &#34; + line + f&#34;{Fore.RESET}     YouDotCom - {version}&#34;)
+                if index == 5:
+                    print(f&#34;{Fore.RESET}| &#34; + line + f&#34;{Fore.RESET}  Made by Silke Pilon on GitHub&#34;)
+                else:
+                    print(f&#34;{Fore.RESET}| &#34; + line)
+                index += 1
+            print(f&#34;╰──────────────────────────────────────────────────────────────╯&#34;)
+            print(&#34;To disable this message use &#39;hide=True&#39; in your Init class&#34;)
         # Detect if running on a headless server
         if self.__is_headless:
             try:
@@ -279,10 +358,11 @@ class Init:
             options.add_argument(f&#34;--proxy-server={self.__proxy}&#34;)
         try:
             self.__verbose_print(&#34;[init] Starting browser&#34;)
+            # self.driver = uc.Chrome(options=options, enable_cdp_events=True, driver_executable_path=f&#34;{self._webdriver_path}&#34;)
             if self._webdriver_path:
-                self.driver = uc.Chrome(options=options, enable_cdp_events=True, driver_executable_path=f&#34;{self._webdriver_path}&#34;)
+                self.driver = uc.Chrome(options=options, driver_executable_path=f&#34;{self._webdriver_path}&#34;)
             else:
-                self.driver = uc.Chrome(options=options, enable_cdp_events=True)
+                self.driver = uc.Chrome(options=options)
         except TypeError as e:
             if str(e) == &#34;expected str, bytes or os.PathLike object, not NoneType&#34;:
                 raise ValueError(&#34;Chrome installation not found&#34;)
