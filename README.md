@@ -134,6 +134,9 @@ The code variable is a dictionary containing a list of code snippets in the resp
 <p align="center">
 Generate code
 </p>
+  
+> **Note**
+> Code complete has an daily limit of 20 requests.
 
 ```python
 from youdotcom import Code # import the write class 
@@ -170,6 +173,9 @@ This code imports the Search class from the youdotcom module. It then calls the 
 <details>
 <summary>YouWrite example</summary>
 <br>
+  
+> **Note**
+> YouWrite has an daily limit of 10 requests.
   
 ```python
 from youdotcom import Write # import the write class 
