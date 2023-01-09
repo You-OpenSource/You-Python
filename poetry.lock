@@ -164,6 +164,21 @@ python-versions = ">=3.6"
 colorama = {version = "*", markers = "platform_system == \"Windows\""}
 
 [[package]]
+name = "click-shell"
+version = "2.1"
+description = "An extension to click that easily turns your click app into a shell utility"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+click = ">=6.0"
+
+[package.extras]
+readline = ["gnureadline"]
+windows = ["pyreadline"]
+
+[[package]]
 name = "cloudscraper"
 version = "1.2.67"
 description = "A Python module to bypass Cloudflare's anti-bot page."
@@ -1017,7 +1032,7 @@ h11 = ">=0.9.0,<1"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "40cecabeddab4630b92147929b2585579d0431d3c583e6ea473576907707cf63"
+content-hash = "de36633eb38870fe2d9b3c2192217cfdf18f69730bdc1724955b2ea22ed860c9"
 
 [metadata.files]
 ascii-magic = []
@@ -1033,6 +1048,7 @@ cfgv = []
 charset-normalizer = []
 chromedriver-autoinstaller = []
 click = []
+click-shell = []
 cloudscraper = []
 colorama = []
 commonmark = []

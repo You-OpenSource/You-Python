@@ -1,8 +1,7 @@
-from youdotcom.code import Code
-from youdotcom.init import Init
+import os
+import sys
+import time
 
-driver = Init(webdriver_path="/usr/bin/chromedriver").driver
+from click_shell import shell
 
-code = Code.find_code(driver, search="python loop")
-
-print(code)  # idk
+import youdotcom
