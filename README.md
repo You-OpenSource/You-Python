@@ -8,7 +8,7 @@
   <br>
 </h1>
 
-<h4 align="center">An unofficial python library wrapper for <a href="http://you.com/" target="_blank">you.com</a> and all of its apps.</h4>
+<h4 align="center">An python library for <a href="http://you.com/" target="_blank">you.com</a> and all of its apps.</h4>
 
 <div align="center">
 
