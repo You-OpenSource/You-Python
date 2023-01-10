@@ -60,6 +60,26 @@ We hope you enjoy using the YouDotCom Python Library and all of the features it 
 * Cross platform
   - Windows, macOS and Linux ready.
 
+
+## install
+
+To install the YouDotCom Python Library, use the following command:
+
+```
+pip install youdotcom
+```
+This will install the latest version of the youdotcom package. To install a specific version, use:
+
+```
+pip install youdotcom==0.3.0
+```
+Once the installation is complete, you can use the youdotcom package in your Python scripts by importing it:
+
+```python
+import youdotcom
+```
+
+
 ## How To Use
 
 To help users get started with the YouDotCom Python Library, we have provided a selection of code examples that demonstrate common use cases for the library. These examples can be found below and cover a range of functionality.
@@ -213,24 +233,6 @@ Type 'exit' to stop.
 
 
 YouShell >
-```
-
-## install
-
-To install the YouDotCom Python Library, use the following command:
-
-```
-pip install youdotcom
-```
-This will install the latest version of the youdotcom package. To install a specific version, use:
-
-```
-pip install youdotcom==0.3.0
-```
-Once the installation is complete, you can use the youdotcom package in your Python scripts by importing it:
-
-```python
-import youdotcom
 ```
 
 ## YouDotCom roadmap
