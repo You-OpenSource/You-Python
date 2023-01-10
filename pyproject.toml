@@ -5,13 +5,13 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "youdotcom"
-version = "1.0.21"
-description = "unofficial api wrapper for you.com and all of its apps"
+version = "1.0.22"
+description = "official api wrapper for you.com and all of its apps"
 readme = "README.md"
-authors = ["youdotcom <silkepilon2009@gmail.com>"]
+authors = ["SilkePilon <silkepilon2009@gmail.com>"]
 license = "MIT"
-repository = "https://github.com/silkepilon/youdotcom"
-homepage = "https://github.com/silkepilon/youdotcom"
+repository = "https://github.com/You-OpenSource/You-Python"
+homepage = "https://github.com/You-OpenSource/You-Python"
 
 # Keywords description https://python-poetry.org/docs/pyproject/#keywords
 keywords = []  #! Update me
