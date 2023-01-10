@@ -68,11 +68,12 @@ To install the YouDotCom Python Library, use the following command:
 ```
 pip install youdotcom
 ```
-This will install the latest version of the youdotcom package. To install a specific version, use:
+This will install the latest version of the youdotcom package. Always make sure to be up-to-date so you don't miss any features, use:
 
 ```
-pip install youdotcom==0.3.0
+pip install youdotcom --upgrade
 ```
+
 Once the installation is complete, you can use the youdotcom package in your Python scripts by importing it:
 
 ```python
