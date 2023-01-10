@@ -235,6 +235,12 @@ Type 'exit' to stop.
 YouShell >
 ```
 
+> **Note**
+> You may sometimes get the following error message: 
+> ```
+> Detected a Cloudflare version 2 Captcha challenge, This feature is not available in the opensource (free) version.
+> ```
+
 ## YouDotCom roadmap
 * [x] add youchat
 * [x] add youcode
