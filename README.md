@@ -195,6 +195,26 @@ This code imports the Write class from the youdotcom module. It then calls the w
 > YouDotCom is in Alpha and there will be bugs!
 
 
+## Interactive shell
+The YouDotCom python library offers a wide range of functionality to its users, and one of the ways in which users can access and utilize this functionality is through an interactive terminal shell. With the interactive shell, users are able to execute commands and manipulate the library in real-time, allowing for a more flexible and dynamic experience.
+
+to use the interactive shell, use the following command in your terminal:
+
+```
+youdotcom
+```
+
+you will get something like this:
+
+```bash
+Welcome to YouShell an interactive shell for all YouDotCom commands
+Enter 'help' for a list of available commands.
+Type 'exit' to stop.
+
+
+YouShell >
+```
+
 ## install
 
 To install the YouDotCom Python Library, use the following command:
