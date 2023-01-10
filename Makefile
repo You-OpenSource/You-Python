@@ -35,7 +35,9 @@ publish:
 	git add .
 	git commit -m 'overall update'
 	git push
-
+.PHONY: readme
+readme:
+	python3 update.py
 
 .PHONY: pre-commit-install
 pre-commit-install:
