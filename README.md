@@ -28,7 +28,7 @@
   <a href="#about">About</a> •
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
-  <a href="#install">Install</a> •
+  <a href="#how-to-install">Install</a> •
   <a href="#credits">Credits</a> •
   <a href="#license">License</a>
 </p>
@@ -61,7 +61,7 @@ We hope you enjoy using the YouDotCom Python Library and all of the features it 
   - Windows, macOS and Linux ready.
 
 
-## install
+## How to install
 
 To install the YouDotCom Python Library, use the following command:
 
