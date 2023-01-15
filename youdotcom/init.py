@@ -150,7 +150,8 @@ mqmF5FOBMRWY&FFpmmF
 
         # Start the browser
         options = uc.ChromeOptions()
-        options.add_argument(f"--window-size={800},{600}")
+        # options.add_argument(f"--window-size={800},{600}")
+        options.add_argument("--headless")
         if self.__proxy:
             options.add_argument(f"--proxy-server={self.__proxy}")
         try:

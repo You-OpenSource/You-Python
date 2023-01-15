@@ -66,5 +66,13 @@ def write():
     print("Total time taken: " + text["time"])
 
 
+@app.command()
+def clear():
+    try:
+        os.system("clear")
+    except:
+        os.system("cls")
+
+
 if __name__ == "__main__":
     app()
