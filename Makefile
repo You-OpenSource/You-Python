@@ -32,9 +32,7 @@ publish:
 	poetry version patch
 	poetry publish --build
 	python3 update.py
-	git add .
-	git commit -m 'overall update'
-	git push
+	python3 release.py
 .PHONY: readme
 readme:
 	python3 update.py
