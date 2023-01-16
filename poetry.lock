@@ -294,14 +294,14 @@ windows = ["pyreadline"]
 
 [[package]]
 name = "cloudscraper"
-version = "1.2.67"
+version = "1.2.68"
 description = "A Python module to bypass Cloudflare's anti-bot page."
 category = "main"
 optional = false
 python-versions = "*"
 files = [
-    {file = "cloudscraper-1.2.67-py2.py3-none-any.whl", hash = "sha256:3b9753724616ac4d811e7922ddc9dba9b4419749ebaa35b0ba503d442522df2e"},
-    {file = "cloudscraper-1.2.67.tar.gz", hash = "sha256:2776c70f3661c028e59fd306ac2b104882c9b3cb3f798086251e00fc2d72c3a2"},
+    {file = "cloudscraper-1.2.68-py2.py3-none-any.whl", hash = "sha256:401409859697edae9384a7623b450cc97ab14dd0b2c8cdcac62edc2d50b31741"},
+    {file = "cloudscraper-1.2.68.tar.gz", hash = "sha256:4d02aceffa90abd4dabc75b79bafa31636309baa7c0f2ee665e2d345aadb8863"},
 ]
 
 [package.dependencies]
