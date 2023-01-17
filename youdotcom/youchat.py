@@ -11,6 +11,7 @@ import markdownify
 import undetected_chromedriver as uc
 import urllib3
 from pyvirtualdisplay import Display
+from ratelimit import limits
 from selenium.common import exceptions as SeleniumExceptions
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
@@ -35,7 +36,7 @@ class Chat:
 
     #     self.__verbose = verbose
     #     self.__driver = driver
-
+    @limits(calls=10, period=100)
     def send_message(driver, message: str) -> dict:
 
         """
