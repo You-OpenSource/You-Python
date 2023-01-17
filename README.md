@@ -112,13 +112,22 @@ driver.close()  # close the webdriver
 print(chat)  # {'message': "It's been great! How about yours?", 'time': '11', 'error': 'False'}
 ```
 
-This code imports two classes from the youdotcom library: Webdriver and Chat. The Webdriver class is used to set up a webdriver, which is a tool that allows you to automate web browsing tasks. The Chat class is used to send a message to the YouChat service.
 
-First, the Webdriver class is instantiated with Webdriver(). The driver attribute of the resulting object is then stored in the driver variable. The driver attribute returns a webdriver object that can be used to automate web browsing tasks.
+### Context
+YouDotCom YouChat also supports context to be used.
+you can pass a list or a file (.json)
 
-Next, the send_message method of the Chat class is called with driver and a message as arguments. This method sends the specified message to the YouChat service using the webdriver. The result of the method call is stored in the chat variable.
+```json
+{  
+    "context": [ 
+        "my name is test",
+        "i love coding",
+        "my hobby's are taking pictures in nature"
+    ]  
+}  
+```
 
-Finally, the webdriver is closed with driver.close(), and the value of chat is printed to the console.
+
   
 </details>
 
