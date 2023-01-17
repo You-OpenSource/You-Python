@@ -113,10 +113,10 @@ print(chat)  # {'message': "It's been great! How about yours?", 'time': '11', 'e
 ```
 
 
-### Context
+#### Context
 YouDotCom's YouChat feature is a powerful tool that allows for context to be utilized in your conversations. By passing a list or a file in the JSON format, you can provide the chatbot with additional information to better understand and respond to your questions.
 
-To use the context option, you can change the way you send your message by using the `Chat.send_message` method. This method allows you to pass in a driver, a message, and a context_form_file or a context parameter.
+To use the context option, you can change the way you send your message by changing the `Chat.send_message` method. This method allows you to pass in a driver, a message, and a context_form_file or a context parameter.
 
 For example, if you want to use a file, you can pass the file name as the `context_form_file` parameter, like this:
   
@@ -133,7 +133,20 @@ Chat.send_message(driver=driver, message="YOUR QUESTION HERE", context=['context
 ```
 
 By providing context to your conversations, you can expect more accurate and personalized responses from YouChat, which can help to improve your overall experience.
-  
+
+The following is an example of a JSON file that can be used as the `context_form_file` parameter in the `Chat.send_message` method:
+
+```json
+{  
+    "context": [ 
+        "my name is test",
+        "i love coding",
+        "my hobby's are making pictures in nature"
+    ]  
+}  
+```
+
+In this example, the `context` field contains an array of strings that provide additional information about the user. The strings can include any relevant information that could help the chatbot understand the context of the conversation.
 
   
 </details>
