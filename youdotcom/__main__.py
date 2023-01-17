@@ -67,6 +67,19 @@ def write():
 
 
 @app.command()
+def chat():
+    from youdotcom import Chat  # import the write class
+
+    inputstr = input("Enter a message: ")
+    print("Please wait...")
+    text = Chat.send_message(f"{inputstr}")  # make an api call
+
+    print(text["message"])  # print the AI made text
+
+    print("Total time taken: " + text["time"])
+
+
+@app.command()
 def clear():
     try:
         os.system("clear")

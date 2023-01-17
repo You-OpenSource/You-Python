@@ -1,10 +1,10 @@
 
 <h1 align="center">
   <br>
-  <a href="https://github.com/SilkePilon/youdotcom/"><img src="https://github.com/SilkePilon/youdotcom/blob/main/youdotcom.png?raw=true" alt="Markdownify" width="200"></a>
+  <a href="https://github.com/SilkePilon/youdotcom/"><img src="https://github.com/SilkePilon/youdotcom/blob/main/youdotcom.png?raw=true" alt="YouDotCom" width="200"></a>
   <br>
   <br>
-  YouDotCom for python v1.0.23
+  YouDotCom for python v1.0.30
   <br>
 </h1>
 

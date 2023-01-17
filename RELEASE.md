@@ -15,5 +15,5 @@
 <!-- ![screenshot](https://raw.githubusercontent.com/SilkePilon/youdotcom/main/assets/images/YouDotCom.jpg) -->
 
 ## Release notes
-changed the way the webdriver works.
-Now fully support headless mode and will not open a window anymoreNow fully support headless mode and will not open a window anymore
+added full api support for youchat
+its now way faster (les that 8 sec)

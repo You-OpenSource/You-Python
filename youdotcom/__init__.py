@@ -5,13 +5,12 @@ import sys
 from importlib import metadata as importlib_metadata
 
 from .apps import Apps
-
-# from .youchat import Chat
 from .code import Code
 from .imagine import Imagine
 from .init import Init as Webdriver
 from .search import Search
 from .write import Write
+from .youchat import Chat
 
 
 def get_version() -> str:
