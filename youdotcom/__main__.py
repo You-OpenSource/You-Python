@@ -68,21 +68,26 @@ def write():
 
 @app.command()
 def chat():
-    from youdotcom import Chat  # import the write class
 
     inputstr = input("Enter a message: ")
+    webdriver = input("Enter webdriver_path (press enter for none): ")
     print("Please wait...")
-    from youchat import Chat
+    from youdotcom import Chat, Webdriver
 
-    from youdotcom import Webdriver
+    if webdriver:
+        driver = Webdriver(webdriver_path=f"{webdriver}", hide=True).driver  # setting up the webdriver. use `webdriver_path=` if the pre-installed one does not work.
+    else:
+        driver = Webdriver(hide=True).driver  # setting up the webdriver. use `webdriver_path=` if the pre-installed one does not work.
+    chat = Chat.send_message(
+        driver=driver,
+        message=f"{inputstr}",
+        context=["you are YouChat but implemented in YouShell an interactive shell for the YouDotCom python lib. Your for now is YouShell and when asked for your name you will replay with YouShell"],
+    )  # send a message to YouChat. passing the driver and messages
 
-    driver = Webdriver(webdriver_path="/usr/bin/chromedriver", hide=True).driver  # setting up the webdriver. use `webdriver_path=` if the pre-installed one does not work.
-
-    chat = Chat.send_message(driver=driver, message="how to make an python loop?")  # send a message to YouChat. passing the driver and messages
-
-    driver.close()  # close the webdriver
+    driver.close()
 
     print(chat["message"])  # {'message': "It's been great! How about yours?", 'time': '11', 'error': 'False'}
+    print(chat["time"])
 
 
 @app.command()
@@ -91,6 +96,16 @@ def clear():
         os.system("clear")
     except:
         os.system("cls")
+
+
+@app.command()
+def exit():
+    exit()
+
+
+@app.command()
+def quit():
+    quit()
 
 
 if __name__ == "__main__":

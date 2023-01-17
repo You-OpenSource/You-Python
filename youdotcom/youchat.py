@@ -60,28 +60,26 @@ class Chat:
             message = str(message).replace(" ", "%20")
             totalcontext = "["
             for item in context:
-                print(item)
+
                 item = str(item)
                 totalcontext += '{"question":"' + item + '","answer":" "},'
             totalcontext += "]"
             totalcontext = str(totalcontext).replace(" ", "%20")
 
-            print(f"https://you.com/api/youchatStreaming?question={message}&chat={totalcontext}")
             driver.get(f"https://you.com/api/youchatStreaming?question={message}&chat={totalcontext}")
         if context and context_form_file == None:
             message = str(message).replace(" ", "%20")
             totalcontext = "["
             for item in context:
-                print(item)
+
                 totalcontext += '{"question":"' + item + '","answer":" "},'
             totalcontext += "]"
             totalcontext = str(totalcontext).replace(" ", "%20")
 
-            print(f"https://you.com/api/youchatStreaming?question={message}&chat={totalcontext}")
             driver.get(f"https://you.com/api/youchatStreaming?question={message}&chat={totalcontext}")
         if not context and not context_form_file:
             message = urllib.parse.quote(message)
-            print(f"https://you.com/api/youchatStreaming?question={message}&chat=[dwadwadwa]")
+
             driver.get(f"https://you.com/api/youchatStreaming?question={message}&chat=[]")
 
         try:
