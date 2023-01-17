@@ -127,6 +127,20 @@ you can pass a list or a file (.json)
 }  
 ```
 
+to use the context option change your .send_message to: 
+  
+```python
+Chat.send_message(driver=driver, message="YOUR QUESTION HERE", context_form_file="FILE_NAME.json")
+```
+  
+change the `FILE_NAME` to whatever you use and pass a question.
+  
+to use the context directly without a file you can pass a list like this:
+  
+```python
+Chat.send_message(driver=driver, message="YOUR QUESTION HERE", context=['context #1', '#2', 'etc...'])
+```
+  
 
   
 </details>
