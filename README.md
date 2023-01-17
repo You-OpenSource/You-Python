@@ -116,6 +116,7 @@ print(chat)  # {'message': "It's been great! How about yours?", 'time': '11', 'e
 #### Context
 > **Note**
 > Your context will not always be used in the response message is is not a code bug but a YouChat thing. Note its still in beta
+  
 YouDotCom's YouChat feature is a powerful tool that allows for context to be utilized in your conversations. By passing a list or a file in the JSON format, you can provide the chatbot with additional information to better understand and respond to your questions.
 
 To use the context option, you can change the way you send your message by changing the `Chat.send_message` method. This method allows you to pass in a driver, a message, and a context_form_file or a context parameter.
