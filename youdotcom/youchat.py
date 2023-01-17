@@ -4,6 +4,7 @@ import os
 import platform
 import re
 import time
+import urllib.parse
 
 import chromedriver_autoinstaller
 import cloudscraper
@@ -36,8 +37,8 @@ class Chat:
 
     #     self.__verbose = verbose
     #     self.__driver = driver
-    @limits(calls=10, period=100)
-    def send_message(driver, message: str) -> dict:
+    @limits(calls=6, period=100)
+    def send_message(driver, message: str, context=None, context_form_file=None) -> dict:
 
         """
         Send a message to YouChat\n
@@ -50,21 +51,54 @@ class Chat:
         """
         start = time.time()
         # Ensure that the Cloudflare cookies is still valid
+        if context_form_file:
 
-        driver.get("https://you.com/api/youchatStreaming?question=" + message + "&chat=[]")
+            with open(context_form_file) as F:
+                textjson = json.load(F)
+                context = textjson["context"]
 
-        textdatastr = (
-            str(
-                driver.page_source.replace("event: token", "")
-                .replace('data: {"token": "', "")
-                .replace('<html><head><meta name="color-scheme" content="light dark"></head><body><pre style="word-wrap: break-word; white-space: pre-wrap;">event: serp_results', "")
-                .replace("</pre></body></html>", "")
-                .replace("\n", "")
-                .replace('"}', "")
+            message = str(message).replace(" ", "%20")
+            totalcontext = "["
+            for item in context:
+                print(item)
+                item = str(item)
+                totalcontext += '{"question":"' + item + '","answer":" "},'
+            totalcontext += "]"
+            totalcontext = str(totalcontext).replace(" ", "%20")
+
+            print(f"https://you.com/api/youchatStreaming?question={message}&chat={totalcontext}")
+            driver.get(f"https://you.com/api/youchatStreaming?question={message}&chat={totalcontext}")
+        if context and context_form_file == None:
+            message = str(message).replace(" ", "%20")
+            totalcontext = "["
+            for item in context:
+                print(item)
+                totalcontext += '{"question":"' + item + '","answer":" "},'
+            totalcontext += "]"
+            totalcontext = str(totalcontext).replace(" ", "%20")
+
+            print(f"https://you.com/api/youchatStreaming?question={message}&chat={totalcontext}")
+            driver.get(f"https://you.com/api/youchatStreaming?question={message}&chat={totalcontext}")
+        if not context and not context_form_file:
+            message = urllib.parse.quote(message)
+            print(f"https://you.com/api/youchatStreaming?question={message}&chat=[dwadwadwa]")
+            driver.get(f"https://you.com/api/youchatStreaming?question={message}&chat=[]")
+
+        try:
+            textdatastr = (
+                str(
+                    driver.page_source.replace("event: token", "")
+                    .replace('data: {"token": "', "")
+                    .replace('<html><head><meta name="color-scheme" content="light dark"></head><body><pre style="word-wrap: break-word; white-space: pre-wrap;">event: serp_results', "")
+                    .replace("</pre></body></html>", "")
+                    .replace("\n", "")
+                    .replace('"}', "")
+                )
+                .replace("event: donedata: I'm Mr. Meeseeks. Look at me.", "")
+                .split("]} ", 1)[1]
             )
-            .replace("event: donedata: I'm Mr. Meeseeks. Look at me.", "")
-            .split("]} ", 1)[1]
-        )
+        except:
+            textdatastr = "error"
 
         msg = markdownify.markdownify(textdatastr)
 
