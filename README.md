@@ -308,9 +308,9 @@ YouShell >
 
 ## Why You.com?
 <p float="left">
-  <img src="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/1.png?raw=true" width="350" />
-  <img src="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/2.png?raw=true" width="350" /> 
-  <img src="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/3.png?raw=true" width="350" />
+  <img src="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/1.png?raw=true" width="330" />
+  <img src="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/2.png?raw=true" width="330" /> 
+  <img src="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/3.png?raw=true" width="330" />
 </p>
 
 
