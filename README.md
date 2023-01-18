@@ -90,15 +90,17 @@ To use the code examples, simply copy and paste the relevant code into your Pyth
 We hope that these code examples will make it easier for users to get up and running with the YouDotCom Python Library and start building with the You.com platform.
 > :warning: **Warning!**
 > Do not spam or harm the you.com servers in any way!
-<details>
-<summary>YouChat example</summary>
-<br>
-
 <h1 align="center">
   <br>
   <a href="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/YouChat.png?raw=true" alt="YouChat" width="200"></a>
   <br>
 </h1>
+
+<details>
+<summary>YouChat example</summary>
+<br>
+
+
 
 > **Note**
 > YouChat is currently disabled because you.com does not yet support the trafic.
