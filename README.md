@@ -168,7 +168,7 @@ In this example, the `context` field contains an array of strings that provide a
 
 <h1 align="center">
   <br>
-  <a href="https://github.com/SilkePilon/youdotcom/"><img src="https://cdn.you.com/img/app-icons/icon-youwrite.svg" alt="YouCode" width="200"></a>
+  <a href="https://github.com/SilkePilon/youdotcom/"><img src="https://cdn.you.com/img/app-icons/icon-youcode.svg" alt="YouCode" width="200"></a>
   <br>
 </h1>
 
@@ -240,6 +240,13 @@ This code imports the Search class from the youdotcom module. It then calls the 
 <details>
 <summary>YouWrite example</summary>
 <br>
+  
+  
+<h1 align="center">
+  <br>
+  <a href="https://github.com/SilkePilon/youdotcom/"><img src="https://cdn.you.com/img/app-icons/icon-youwrite.svg" alt="YouCode" width="200"></a>
+  <br>
+</h1>
   
 > **Note**
 > YouWrite has an daily limit of 10 requests.
