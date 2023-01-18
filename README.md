@@ -174,9 +174,8 @@ In this example, the `context` field contains an array of strings that provide a
 
 
 
-<p align="center">
-  **Find code**
-</p>
+#### Find code
+
   
 ```python
 from youdotcom import Webdriver, Code # import all the classes
@@ -201,9 +200,7 @@ The code variable is a dictionary containing a list of code snippets in the resp
   
 ---
   
-<p align="center">
- **Generate code**
-</p>
+#### Generate code
   
 > **Note**
 > Code complete has an daily limit of 20 requests.
