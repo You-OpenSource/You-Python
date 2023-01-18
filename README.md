@@ -98,9 +98,6 @@ We hope that these code examples will make it easier for users to get up and run
   <br>
   <a href="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/YouChat.png?raw=true" alt="YouChat" width="200"></a>
   <br>
-  <br>
-  YouDotCom for python v1.1.3
-  <br>
 </h1>
 
 > **Note**
