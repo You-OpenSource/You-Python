@@ -309,17 +309,17 @@ YouShell >
 ## Why You.com?
 <h1 align="center">
   <br>
-  <a href="https://github.com/SilkePilon/youdotcom/"><img src="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/1.png?raw=true" alt="1" with="150"></a>
+  <a href="https://github.com/SilkePilon/youdotcom/"><img src="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/1.png?raw=true" alt="1" width="150"></a>
   <br>
 </h1>
 <h1 align="center">
   <br>
-  <a href="https://github.com/SilkePilon/youdotcom/"><img src="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/2.png?raw=true" alt="2" with="150"></a>
+  <a href="https://github.com/SilkePilon/youdotcom/"><img src="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/2.png?raw=true" alt="2" width="150"></a>
   <br>
 </h1>
 <h1 align="center">
   <br>
-  <a href="https://github.com/SilkePilon/youdotcom/"><img src="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/3.png?raw=true" alt="3" with="150"></a>
+  <a href="https://github.com/SilkePilon/youdotcom/"><img src="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/3.png?raw=true" alt="3" width="150"></a>
   <br>
 </h1>
 
