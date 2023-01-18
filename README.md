@@ -96,7 +96,7 @@ We hope that these code examples will make it easier for users to get up and run
 
 <h1 align="center">
   <br>
-  <a href="https://ci3.googleusercontent.com/proxy/4sSedY8XJc9ffCQPw-O0_nZxsR5TTNfQC9B5ezMrsU-rE2nakB7Z2ru2KLqLevvf5u_DMY81L9GSlT19j7hLtHrtN-SvGtrHdRO2lq5pDEaBPrZYPgX6AnrhBzvHTsdPl09FRHy29Em9BuTizYuRw6Dm0_D_ogSowvcFEfri15CCbyihVdrXvS4=s0-d-e1-ft#https://dim.mcusercontent.com/cs/7e773ee935463b1a738f4cb99/images/758fa9c8-8971-66d6-1514-985e973d65c5.png?w=115&dpr=2" alt="YouChat" width="200"></a>
+  <a href="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/YouChat.png?raw=true" alt="YouChat" width="200"></a>
   <br>
   <br>
   YouDotCom for python v1.1.3
