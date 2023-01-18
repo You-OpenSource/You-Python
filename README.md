@@ -165,6 +165,15 @@ In this example, the `context` field contains an array of strings that provide a
 <details>
 <summary>YouCode example</summary>
 <br>
+
+<h1 align="center">
+  <br>
+  <a href="https://github.com/SilkePilon/youdotcom/"><img src="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/YouCode.png?raw=true" alt="YouCode" width="200"></a>
+  <br>
+</h1>
+
+
+
 <p align="center">
 Find code
 </p>
