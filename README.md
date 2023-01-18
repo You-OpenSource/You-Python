@@ -304,6 +304,26 @@ YouShell >
 * [ ] add all of you.com apps
 
 
+
+
+## Why You.com?
+<h1 align="center">
+  <br>
+  <a href="https://github.com/SilkePilon/youdotcom/"><img src="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/1.png?raw=true" alt="1" ></a>
+  <br>
+</h1>
+<h1 align="center">
+  <br>
+  <a href="https://github.com/SilkePilon/youdotcom/"><img src="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/2.png?raw=true" alt="2" ></a>
+  <br>
+</h1>
+<h1 align="center">
+  <br>
+  <a href="https://github.com/SilkePilon/youdotcom/"><img src="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/3.png?raw=true" alt="3"></a>
+  <br>
+</h1>
+
+
 ## Discord
 In addition to the YouDotCom Python Library, we also have an active [Discord server](https://discord.gg/SD7wZMFSvV) where you can chat with developers and get help with using the library. Our Discord community is a great place to ask questions, share your projects, and get feedback from other developers.
 
