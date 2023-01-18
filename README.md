@@ -168,7 +168,7 @@ In this example, the `context` field contains an array of strings that provide a
 
 <h1 align="center">
   <br>
-  <a href="https://github.com/SilkePilon/youdotcom/"><img src="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/YouCode.png?raw=true" alt="YouCode" width="200"></a>
+  <a href="https://github.com/SilkePilon/youdotcom/"><img src="https://cdn.you.com/img/app-icons/icon-youwrite.svg" alt="YouCode" width="200"></a>
   <br>
 </h1>
 
