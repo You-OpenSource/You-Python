@@ -175,7 +175,7 @@ In this example, the `context` field contains an array of strings that provide a
 
 
 <p align="center">
-#### Find code
+  **Find code**
 </p>
   
 ```python
@@ -202,7 +202,7 @@ The code variable is a dictionary containing a list of code snippets in the resp
 ---
   
 <p align="center">
-#### Generate code
+ **Generate code**
 </p>
   
 > **Note**
