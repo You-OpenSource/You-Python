@@ -34,15 +34,16 @@ class Init:
     Returns a `variable` with the driver
     """
 
-    def __init__(self, verbose: bool = False, proxy: str = "", window_size: tuple = (800, 600), webdriver_path: str = "", hide: bool = False) -> None:
+    def __init__(self, verbose: bool = False, proxy: str = "", headless: bool = True, webdriver_path: str = "", hide: bool = False, keep: bool = False) -> None:
 
         self.__verbose = verbose
         self.__proxy = proxy
         self.__hide = hide
+        self.__keep = keep
         if self.__proxy and not re.findall(r"(https?|socks(4|5)?):\/\/.+:\d{1,5}", self.__proxy):
             raise ValueError("Invalid proxy format")
         self._webdriver_path = webdriver_path
-
+        self.__headless = headless
         self.__is_headless = platform.system() == "Linux" and "DISPLAY" not in os.environ
         self.__verbose_print("[0] Platform:", platform.system())
         self.__verbose_print("[0] Display:", "DISPLAY" in os.environ)
@@ -151,7 +152,10 @@ mqmF5FOBMRWY&FFpmmF
         # Start the browser
         options = uc.ChromeOptions()
         # options.add_argument(f"--window-size={800},{600}")
-        options.add_argument("--headless")
+        if self.__headless:
+            options.add_argument("--headless")
+        if self.__keep:
+            options.add_experimental_option("detach", True)
         if self.__proxy:
             options.add_argument(f"--proxy-server={self.__proxy}")
         try:

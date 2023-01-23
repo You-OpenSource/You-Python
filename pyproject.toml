@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "youdotcom"
-version = "1.1.4"
+version = "1.1.16"
 description = "official api wrapper for you.com and all of its apps"
 readme = "README.md"
 authors = ["SilkePilon <silkepilon2009@gmail.com>"]

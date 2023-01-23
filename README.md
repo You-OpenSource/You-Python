@@ -4,7 +4,7 @@
   <a href="https://github.com/SilkePilon/youdotcom/"><img src="https://github.com/SilkePilon/youdotcom/blob/main/youdotcom.png?raw=true" alt="YouDotCom" width="200"></a>
   <br>
   <br>
-  YouDotCom for python v1.1.3
+  YouDotCom for python v1.1.5
   <br>
 </h1>
 
