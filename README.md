@@ -300,6 +300,10 @@ YouShell >
 
 
 ## API
+
+> **Note**
+> The request limit is 5 per minute.
+
 Welcome to the YouDotCom Python library! Our library now features an easy-to-use public API that allows you to interact with YouChat. With this API, you can easily integrate YouChat into your own projects and applications, providing a convenient and user-friendly way for your users to access and utilize the capabilities of the chat bot.
 
 ~~To get started, you will first need to register for an API key on our website. This key will be required to authenticate each API request.~~
