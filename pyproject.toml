@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "youdotcom"
-version = "1.1.16"
+version = "1.2.0"
 description = "official api wrapper for you.com and all of its apps"
 readme = "README.md"
 authors = ["SilkePilon <silkepilon2009@gmail.com>"]
@@ -24,7 +24,6 @@ classifiers = [  #! Update me
   "Topic :: Software Development :: Libraries :: Python Modules",
   "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.9",
 ]
 
 [tool.poetry.scripts]

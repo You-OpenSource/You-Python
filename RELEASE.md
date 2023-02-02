@@ -15,5 +15,4 @@
 <!-- ![screenshot](https://raw.githubusercontent.com/SilkePilon/youdotcom/main/assets/images/YouDotCom.jpg) -->
 
 ## Release notes
-added full api support for youchat
-its now way faster (les that 8 sec)
+fully replaced youdotcom's chat with the betterapi (also made by me) for faster responsesits now way faster (les that 8 sec)
