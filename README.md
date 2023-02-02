@@ -107,12 +107,11 @@ We hope that these code examples will make it easier for users to get up and run
 
 
 ```python
-from youdotcom import Webdriver, Chat # import all the classes
+from youdotcom import Chat # import all the classes
 
-driver = Webdriver().driver  # setting up the webdriver. use `webdriver_path=` if the pre-installed one does not work.
+chat = Chat.send_message(message="how is your day?", api_key="YOUR API KEY HERE") # send a message to YouChat. passing the driver and messages
 
-
-chat = Chat.send_message(driver=driver, message="how is your day?")  # send a message to YouChat. passing the driver and messages
+# you can get an api key form the site: https://api.betterapi.net/ (with is also made by me)
 
 driver.close()  # close the webdriver
 
