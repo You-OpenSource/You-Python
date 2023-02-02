@@ -309,7 +309,7 @@ YouShell >
 
 Welcome to the YouDotCom Python library! Our library now features an easy-to-use public API that allows you to interact with YouChat. With this API, you can easily integrate YouChat into your own projects and applications, providing a convenient and user-friendly way for your users to access and utilize the capabilities of the chat bot.
 
-~~To get started, you will first need to register for an API key on our website. This key will be required to authenticate each API request.~~
+To get started, you will first need to register for an API key on our website. This key will be required to authenticate each API request.
 
 base url: `api.betterapi.net`
 
@@ -317,7 +317,7 @@ To send a message to YouChat and receive a JSON response, you can make an HTTP G
 
 Another endpoint is provided to convert the output text into speech, the endpoint is `/youdotcom/cts`. The message to be converted should be included as a query parameter in the URL, with the key `message` and the value being the message text. For example, to convert the message `hello there` into speech, the endpoint would be `/youdotcom/cts?message=hello%20there`
 
-~~Make sure to include the API key in the header of each request to authenticate it.~~
+Make sure to include the API key in the url of each request to authenticate it.
 
 
 We are constantly improving and updating the YouDotCom library and API, so make sure to check back for new features and updates. If you have any questions or need assistance, feel free to reach out in the Discusions tab. I'm always happy to help.
