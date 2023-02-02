@@ -109,7 +109,7 @@ We hope that these code examples will make it easier for users to get up and run
 ```python
 from youdotcom import Chat # import all the classes
 
-chat = Chat.send_message(message="how is your day?", api_key="YOUR API KEY HERE") # send a message to YouChat. passing the driver and messages
+chat = Chat.send_message(message="how is your day?", api_key="YOUR API KEY HERE") # send a message to YouChat. passing the message and your api key.
 
 # you can get an api key form the site: https://api.betterapi.net/ (with is also made by me)
 
@@ -121,6 +121,10 @@ print(chat)  # {'message': "It's been great! How about yours?", 'time': '11', 'e
 
 
 #### Context
+> **Note**
+> at the moment there is no context support YET. becuase of new api.
+  
+ 
 > **Note**
 > Your context will not always be used in the response message is is not a code bug but a YouChat thing. Note its still in beta
   
