@@ -113,10 +113,7 @@ chat = Chat.send_message(message="how is your day?", api_key="YOUR API KEY HERE"
 
 # you can get an api key form the site: https://api.betterapi.net/ (with is also made by me)
 
-driver.close()  # close the webdriver
-
-
-print(chat)  # {'message': "It's been great! How about yours?", 'time': '11', 'error': 'False'}
+print(chat)  # returns the message and some other data
 ```
 
 
