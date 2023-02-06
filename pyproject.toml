@@ -51,7 +51,7 @@ black = {version = "^22.12.0", allow-prereleases = true}
 darglint = "^1.8.1"
 isort = {extras = ["colors"], version = "^5.11.4"}
 mypy = "^0.991"
-mypy-extensions = "^0.4.3"
+mypy-extensions = "^1.0.0"
 pre-commit = "^3.0.3"
 pydocstyle = "^6.2.3"
 pylint = "^2.15.10"
