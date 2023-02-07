@@ -1,12 +1,12 @@
 ---
-name: 🐛 API Bug/Error report
+name: 🔧 API Error report
 about: If the api isn't working 🔧
 title: ''
 labels: bug
 assignees:
 ---
 
-## 🐛 Bug Report
+## 🔧 API Error Report
 
 <!-- A clear and concise description of what the bug is. -->
 
