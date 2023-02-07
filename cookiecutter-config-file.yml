@@ -2,12 +2,11 @@
 
 default_context:
   project_name: "youdotcom"
-  project_description: "unofficial api wrapper for you.com and all of its apps"
+  project_description: "official api wrapper for you.com and all of its apps"
   organization: "youdotcom"
   license: "MIT"
-  minimal_python_version: 3.9
+  minimal_python_version: 3.8
   github_name: "silkepilon"
   email: "silkepilon2009@gmail.com"
-  version: "0.1.0"
+  version: "0.1.2"
   line_length: "200"
-  create_example_template: "cli"
