@@ -302,20 +302,22 @@ YouShell >
 ## API
 
 > **Note**
-> The request limit is 5 per minute.
+> The request limit is 15 per minute.
 
 Welcome to the YouDotCom Python library! Our library now features an easy-to-use public API that allows you to interact with YouChat. With this API, you can easily integrate YouChat into your own projects and applications, providing a convenient and user-friendly way for your users to access and utilize the capabilities of the chat bot.
 
-To get started, you will first need to register for an API key on our website. This key will be required to authenticate each API request.
+To get started, you will first need to get an API key on our [website](https://betterapi.net/). This key will be required to authenticate each API request.
 
 base url: `api.betterapi.net`
 
-To send a message to YouChat and receive a JSON response, you can make an HTTP GET request to the endpoint `/youdotcom/chat`, including the message to be sent as a query parameter. The key is `message` and the value should be the message text encoded in URL format. For example, to send the message `hello there`, the endpoint would be `/youdotcom/chat?message=hello%20there`. The JSON response will include the message sent by YouChat, time, v2Captcha, and type of the request.
+To send a message to YouChat and receive a JSON response, you can make an HTTP GET request to the endpoint `/youdotcom/chat`, including the message to be sent as a query parameter. The key is `message` and the value should be the message text encoded in URL format. For example, to send the message `hello there`, the endpoint would be `https://apibetterapi.net/youdotcom/chat?message=hello%20there&key=YOUR_API_KEY`. The JSON response will include the message sent by YouChat, time, v2Captcha, and type of the request.
 
-Another endpoint is provided to convert the output text into speech, the endpoint is `/youdotcom/cts`. The message to be converted should be included as a query parameter in the URL, with the key `message` and the value being the message text. For example, to convert the message `hello there` into speech, the endpoint would be `/youdotcom/cts?message=hello%20there`
+You also need to set your API key, you can do this by providing it as an parameter like this `/youdotcom/chat?message=hello%20there&key=YOUR_API_KEY`
+
+
+auto updating docs can be found at: https://betterapi.net/redoc
 
 Make sure to include the API key in the url of each request to authenticate it.
-
 
 We are constantly improving and updating the YouDotCom library and API, so make sure to check back for new features and updates. If you have any questions or need assistance, feel free to reach out in the Discusions tab. I'm always happy to help.
 
@@ -331,12 +333,8 @@ We are constantly improving and updating the YouDotCom library and API, so make 
 
 
 
-## Why You.com?
-<p float="left">
-  <img src="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/1.png?raw=true" width="250" />
-  <img src="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/2.png?raw=true" width="250" /> 
-  <img src="https://github.com/You-OpenSource/You-Python/blob/main/assets/images/3.png?raw=true" width="250" />
-</p>
+## YouDotCom projects!
+- [telegram bot](https://github.com/samezarus/you_telegram_bot)
 
 
 

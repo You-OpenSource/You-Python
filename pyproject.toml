@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "youdotcom"
-version = "1.2.0"
+version = "2.0.20"
 description = "official api wrapper for you.com and all of its apps"
 readme = "README.md"
 authors = ["SilkePilon <silkepilon2009@gmail.com>"]
@@ -43,6 +43,13 @@ ascii-magic = "^1.6"
 cloudscraper = "^1.2.66"
 click-shell = "^2.1"
 ratelimit = "^2.2.1"
+fastapi-queue = "^0.1.1"
+aioredis = "^2.0.1"
+fastapi = "^0.92.0"
+gtts = "^2.3.1"
+slowapi = "^0.1.7"
+uvicorn = "^0.20.0"
+pydantic = "^1.10.5"
 
 
 [tool.poetry.dev-dependencies]

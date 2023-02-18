@@ -11,7 +11,7 @@ import chromedriver_autoinstaller
 import cloudscraper
 import markdownify
 import requests
-import undetected_chromedriver.v2 as uc
+import undetected_chromedriver as uc
 import urllib3
 from pyvirtualdisplay import Display
 from ratelimit import limits

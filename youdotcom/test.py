@@ -1,5 +1,5 @@
-from youchat import Chat
+from api import Api
+from backend import Backend
 
-chat = Chat.send_message(message="hi there", api_key="GWG6FHCCIY8DF4A7S3S0QK2UGSVJWU4K3GF")
-
-print(chat)
+Backend.run()
+Api.run(port=8888)

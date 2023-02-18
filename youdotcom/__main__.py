@@ -1,17 +1,20 @@
 # type: ignore[attr-defined]
 from typing import Optional
 
+import glob
 import os
+import pathlib
+import subprocess
 import sys
 import time
 from enum import Enum
 from importlib import metadata as importlib_metadata
 from random import choice
 
-import ascii_magic
+import click
 import requests
 import typer
-from click_shell import shell
+from click_shell import make_click_shell, shell
 from colorama import Fore
 from rich.console import Console
 
@@ -64,6 +67,37 @@ def write():
     print(text["response"])  # print the AI made text
 
     print("Total time taken: " + text["time"])
+
+
+@app.command()
+@click.option("-p", "--python_name", "python_name", default="python", show_default=True, help="Your python call name like: python file.py")
+@click.option("-ip", "--input", "ip", default="0.0.0.0", show_default=True, help="IP used for hosting")
+@click.option("-port", "--input", "port", default="80", show_default=True, help="Port on with the server is running")
+def host(python_name, ip, port):
+    print(f"[API] - PYTHON: {python_name}")
+    print(f"[API] - IP: {ip}")
+    print(f"[API] - PORT: {port}")
+    p = subprocess.check_output(["pip", "show", "youdotcom"])
+    out = p.decode("utf-8")
+
+    data = out.split("\n")
+    for line in data:
+        if line.startswith("Location: "):
+
+            path = str(line[10:])
+            if "\\" in path:
+                use_key = "\\"
+            if "/" in path:
+                use_key = "/"
+            path1 = f"{path}{use_key}youdotcom{use_key}api_1.py"
+            path2 = f"{path}{use_key}youdotcom{use_key}api_2.py"
+
+    print(f"[API] - Starting...")
+
+    api = subprocess.Popen([f"{python_name}", f"{path1}", f"{ip}", f"{port}"], stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+    backend = subprocess.Popen([f"{python_name}", f"{path2}"])
+    # api.terminate()
+    # backend.terminate()
 
 
 @app.command()
