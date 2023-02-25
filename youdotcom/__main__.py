@@ -51,7 +51,7 @@ def search():
     print("Please wait...")
     search_results = Search.search_for(f"{inputstr}")  # search! No need to use the Webdriver class.
 
-    print(search_results["results"]["mainline"]["bing_search_results"])  # print all the search results
+    print(search_results["results"]["mainline"]["third_party_search_results"])  # print all the search results
 
     print("Total time taken: " + search_results["time"])  # print total time taken to complete your request
 
