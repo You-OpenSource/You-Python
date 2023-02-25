@@ -30,7 +30,7 @@ update:
 .PHONY: publish
 publish:
 	poetry version patch
-	poetry publish --build --username SilkePilon --password Landrover@01
+	poetry publish --build 
 	python3 update.py
 	python3 release.py
 .PHONY: readme
