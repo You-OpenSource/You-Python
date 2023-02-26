@@ -366,7 +366,7 @@ async def on_ready():
 @client.tree.command()
 @app_commands.describe(message='The message to YouChat')
 async def joined(interaction: discord.Interaction, message:str = "hi there"):
-    """Says when a member joined."""
+    """Send a message to YouChat"""
     await interaction.response.defer()
     data = requests.get(f"https://api.betterapi.net/youdotcom/chat?message={message}&key={betterapi_token}").json()
     try: 
