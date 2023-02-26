@@ -321,6 +321,63 @@ Make sure to include the API key in the url of each request to authenticate it.
 
 We are constantly improving and updating the YouDotCom library and API, so make sure to check back for new features and updates. If you have any questions or need assistance, feel free to reach out in the Discusions tab. I'm always happy to help.
 
+## Discord bot
+```python
+from typing import Optional
+
+import discord
+from discord import app_commands
+
+
+MY_GUILD = discord.Object(id=0)  # replace with your guild id
+
+
+class MyClient(discord.Client):
+    def __init__(self, *, intents: discord.Intents):
+        super().__init__(intents=intents)
+        # A CommandTree is a special type that holds all the application command
+        # state required to make it work. This is a separate class because it
+        # allows all the extra state to be opt-in.
+        # Whenever you want to work with application commands, your tree is used
+        # to store and work with them.
+        # Note: When using commands.Bot instead of discord.Client, the bot will
+        # maintain its own tree instead.
+        self.tree = app_commands.CommandTree(self)
+
+    # In this basic example, we just synchronize the app commands to one guild.
+    # Instead of specifying a guild to every command, we copy over our global commands instead.
+    # By doing so, we don't have to wait up to an hour until they are shown to the end-user.
+    async def setup_hook(self):
+        # This copies the global commands over to your guild.
+        self.tree.copy_global_to(guild=MY_GUILD)
+        await self.tree.sync(guild=MY_GUILD)
+
+
+intents = discord.Intents.default()
+client = MyClient(intents=intents)
+betterapi_token = "YOUR API KEY HERE"
+
+@client.event
+async def on_ready():
+    print(f'Logged in as {client.user} (ID: {client.user.id})')
+    print('------')
+
+
+@client.tree.command()
+@app_commands.describe(message='The message to YouChat')
+async def joined(interaction: discord.Interaction, message:str = "hi there"):
+    """Says when a member joined."""
+    await interaction.response.defer()
+    data = requests.get(f"https://api.betterapi.net/youdotcom/chat?message={message}&key={betterapi_token}").json()
+    try: 
+        msg = data['message']
+    except:
+        msg = "got an error!"
+    await interaction.followup.send(f"{msg}")
+
+client.run('token')
+```
+
 
 ## YouDotCom roadmap
 * [x] add youchat
