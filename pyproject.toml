@@ -53,7 +53,7 @@ pydantic = "^1.10.5"
 
 
 [tool.poetry.dev-dependencies]
-bandit = "^1.7.4"
+bandit = "^1.7.5"
 black = {version = "^22.12.0", allow-prereleases = true}
 darglint = "^1.8.1"
 isort = {extras = ["colors"], version = "^5.11.4"}
@@ -72,7 +72,7 @@ pytest-cov = "^4.0.0"
 click = "8.0.4"
 
 [tool.poetry.group.dev.dependencies]
-bandit = "^1.7.4"
+bandit = "^1.7.5"
 darglint = "^1.8.1"
 isort = {extras = ["colors"], version = "^5.12.0"}
 mypy = "^1.0.1"
