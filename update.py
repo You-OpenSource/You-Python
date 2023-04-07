@@ -12,7 +12,7 @@ with open("README.md") as file:
     data = file.readlines()
 
 
-print("Old Title: " + data[6])
+print(f"Old Title: {data[6]}")
 
 
 # typeof = input("type of update (major/minor/patch): ")
@@ -20,8 +20,8 @@ print("Old Title: " + data[6])
 # os.system("poetry publish --build")
 version = subprocess.run(["poetry", "version", "-s"], capture_output=True, text=True).stdout.rstrip()
 # now change the 2nd line, note that you have to add a newline
-data[6] = "  YouDotCom for python v" + version + "\n"
-print("New Title: " + data[6])
+data[6] = f"  YouDotCom for python v{version}" + "\n"
+print(f"New Title: {data[6]}")
 # and write everything back
 with open("README.md", "w") as file:
     file.writelines(data)

@@ -82,12 +82,12 @@ for cookie in cookievar:
 def sendmessagetochat(redis, mysql, message, contextid, ip, url):
     try:
         with open("logs.txt", "a+") as T:
-            datetimestr = datetime.today()
+            datetimestr = datetime.now()
             T.write(f"{ip} @ {datetimestr} @{url}\n")
         start = time.time()
         CloudflareChallengeError = False
         typeof = ""
-        if contextid == "" or None:
+        if not contextid:
             contextid = ""
 
         global chat
@@ -123,7 +123,7 @@ def sendmessagetochat(redis, mysql, message, contextid, ip, url):
         except cloudscraper.exceptions.CloudflareChallengeError as e:
             youchatapitimeout = True
             driver.get(
-                f"https://you.com/api/streamingSearch?q={message}&page=1&count=10&safeSearch=Moderate&onShoppingPage=false&mkt=&responseFilter=WebPages,Translations,TimeZone,Computation,RelatedSearches&domain=youchat&queryTraceId=&chat={str(chat)}&sharedChatId={contextid}"
+                f"https://you.com/api/streamingSearch?q={message}&page=1&count=10&safeSearch=Moderate&onShoppingPage=false&mkt=&responseFilter=WebPages,Translations,TimeZone,Computation,RelatedSearches&domain=youchat&queryTraceId=&chat={chat}&sharedChatId={contextid}"
             )
             driver.add_cookie({"name": "uuid_guest", "value": "dummystring"})
             CloudflareChallengeError = True
@@ -133,10 +133,10 @@ def sendmessagetochat(redis, mysql, message, contextid, ip, url):
             contextid
 
         output = ""
-        if CloudflareChallengeError == True:
-            for line in response:
+        if not CloudflareChallengeError:
+            for line in response.iter_lines():
                 if line:
-                    decoded_line = str(line)
+                    decoded_line = line.decode("utf-8")
                     key, value = decoded_line.split(":", 1)
                     key = key.strip()
                     value = value.strip()
@@ -149,10 +149,10 @@ def sendmessagetochat(redis, mysql, message, contextid, ip, url):
                         data = json.loads(value)
                         if "youChatToken" in data:
                             output += data["youChatToken"]
-        if CloudflareChallengeError == False:
-            for line in response.iter_lines():
+        else:
+            for line in response:
                 if line:
-                    decoded_line = line.decode("utf-8")
+                    decoded_line = str(line)
                     key, value = decoded_line.split(":", 1)
                     key = key.strip()
                     value = value.strip()
@@ -171,8 +171,13 @@ def sendmessagetochat(redis, mysql, message, contextid, ip, url):
         timedate = time.time() - start
         timedate = time.strftime("%S", time.gmtime(timedate))
 
-        return {"message": out, "time": str(timedate), "v2Captcha": str(CloudflareChallengeError), "type": str(typeof)}
-    except:
+        return {
+            "message": out,
+            "time": str(timedate),
+            "v2Captcha": str(CloudflareChallengeError),
+            "type": typeof,
+        }
+    except Exception:
         print(traceback.format_exc())
 
 
@@ -190,7 +195,7 @@ async def main(pid, logger):
 
     first_time_run = True
     while True:
-        run_startup, first_time_run = (True if pid != 0 else False) and first_time_run, False
+        run_startup, first_time_run = pid != 0 and first_time_run, False
         redis = aioredis.Redis.from_url("redis://localhost")
         try:
             worker = QueueWorker(

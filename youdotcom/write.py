@@ -35,7 +35,7 @@ class Write:
     #     self.__verbose = verbose
     #     self.__driver = driver
 
-    def write(message: str) -> dict:
+    def write(self) -> dict:
         """
         Search on You.com\n
         Parameters:
@@ -49,7 +49,7 @@ class Write:
             "use_case": "essay",
             "tone": "",
             "audience": "",
-            "message": f"{message}",
+            "message": f"{self}",
         }
         msg = scraper.post("https://you.com/api/copywrite", json=json_data).text
         msg = json.loads(msg)
