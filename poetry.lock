@@ -42,14 +42,14 @@ trio = ["trio (>=0.16,<0.22)"]
 
 [[package]]
 name = "ascii-magic"
-version = "1.6"
+version = "2.3.0"
 description = "Converts pictures into ASCII art"
 category = "main"
 optional = false
 python-versions = ">=3.5"
 files = [
-    {file = "ascii_magic-1.6-py3-none-any.whl", hash = "sha256:937447d8677b7428856729c298c0264afd62fc2b8e7ff90c82000492cdc5f8d4"},
-    {file = "ascii_magic-1.6.tar.gz", hash = "sha256:7da5518f7368e73f11e2151a0c060804aa149e267b369b7ee7653fbd7b046a51"},
+    {file = "ascii_magic-2.3.0-py3-none-any.whl", hash = "sha256:c17d562bc0dca31594b00a36392e0f2e5eb1ff42aaf5d22bf913abfa89d06fc6"},
+    {file = "ascii_magic-2.3.0.tar.gz", hash = "sha256:3ed41a1cb167deed5ccfc628b669f35a3a03f67bdd72dcc18be5ffd8a2643d85"},
 ]
 
 [package.dependencies]
@@ -2367,4 +2367,4 @@ h11 = ">=0.9.0,<1"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "acc396f6617cdbf1653e8171ba98c616e8b09b79bc07863122cc6a303f920823"
+content-hash = "66842a7185d63ce1dca253f082d00cbb9a4dc8769ed0c354f771de07ada564e0"
