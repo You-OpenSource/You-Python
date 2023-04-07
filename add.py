@@ -3,6 +3,7 @@
 Convert a requirements.txt file to a Poetry project.
 Just place in the root of your working directory and run!
 """
+
 sourceFile = "./requirements.txt"
 
 import os
@@ -30,7 +31,7 @@ bareRequirements = re.sub("\n+", "\n", noComments, 0, re.IGNORECASE | re.MULTILI
 
 pipPoetryMap = {">": "^", "=": ""}
 
-reqList = list()
+reqList = []
 for line in bareRequirements.splitlines():
     package, match, version = re.sub(r"^(.*?)\s*([~>=<])=\s*v?([0-9\.\*]+)", r"\1,\2,\3", line, 0, re.IGNORECASE | re.MULTILINE).split(",")
     try:

@@ -106,7 +106,7 @@ class Init:
                 self.display = Display()
             except FileNotFoundError as e:
                 if "No such file or directory: 'Xvfb'" in str(e):
-                    raise ValueError("Headless machine detected. Please install Xvfb to start a virtual display: sudo apt install xvfb")
+                    raise ValueError("Headless machine detected. Please install Xvfb to start a virtual display: sudo apt install xvfb") from e
                 raise e
             self.__verbose_print("[init] Starting virtual display")
             self.display.start()
@@ -129,7 +129,7 @@ class Init:
                 self.driver = uc.Chrome(options=options)
         except TypeError as e:
             if str(e) == "expected str, bytes or os.PathLike object, not NoneType":
-                raise ValueError("Chrome installation not found")
+                raise ValueError("Chrome installation not found") from e
             raise e
 
         # Restore session token

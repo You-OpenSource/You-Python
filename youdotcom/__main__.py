@@ -92,7 +92,7 @@ def host(python_name, ip, port):
             path1 = f"{path}{use_key}youdotcom{use_key}api_1.py"
             path2 = f"{path}{use_key}youdotcom{use_key}api_2.py"
 
-    print(f"[API] - Starting...")
+    print("[API] - Starting...")
 
     api = subprocess.Popen([f"{python_name}", f"{path1}", f"{ip}", f"{port}"], stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
     backend = subprocess.Popen([f"{python_name}", f"{path2}"])
@@ -133,7 +133,7 @@ def chat():
 def clear():
     try:
         os.system("clear")
-    except:
+    except Exception:
         os.system("cls")
 
 

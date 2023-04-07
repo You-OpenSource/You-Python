@@ -37,7 +37,7 @@ class Code:
     #     self.__verbose = verbose
     #     self.__driver = driver
 
-    def find_code(driver, search: str) -> dict:
+    def find_code(self, search: str) -> dict:
 
         """
         Send a message to YouChat\n
@@ -51,15 +51,15 @@ class Code:
         start = time.time()
         # Ensure that the Cloudflare cookies is still valid
 
-        driver.get("https://you.com/search?q=" + search + "&tbm=youcode")
+        self.get(f"https://you.com/search?q={search}&tbm=youcode")
 
         # Send the message
 
-        WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.TAG_NAME, "main")))
-        WebDriverWait(driver, 7).until(EC.presence_of_element_located((By.XPATH, '//*[@data-eventactiontitle="Copy Button"]')))
+        WebDriverWait(self, 5).until(EC.presence_of_element_located((By.TAG_NAME, "main")))
+        WebDriverWait(self, 7).until(EC.presence_of_element_located((By.XPATH, '//*[@data-eventactiontitle="Copy Button"]')))
         # Get the response element
 
-        response = driver.find_elements(By.XPATH, '//*[@data-eventactiontitle="Copy Button"]')
+        response = self.find_elements(By.XPATH, '//*[@data-eventactiontitle="Copy Button"]')
 
         # Check if the response is an error
 
@@ -79,15 +79,13 @@ class Code:
         #     except:
         #         continue
 
-        msg = []
-        for code in response:
-            msg.append(str(code.get_attribute("data-eventactioncontent")))
+        msg = [str(code.get_attribute("data-eventactioncontent")) for code in response]
         msg = list(dict.fromkeys(msg))
         timedate = time.time() - start
         timedate = time.strftime("%S", time.gmtime(timedate))
         return {"response": msg, "time": str(timedate)}
 
-    def gen_code(message: str) -> dict:
+    def gen_code(self) -> dict:
         """
         Search on You.com\n
         Parameters:
@@ -99,7 +97,7 @@ class Code:
         scraper = cloudscraper.create_scraper()
         json_data = {
             "engine": "cushman-codex",
-            "prompt": f"{message}",
+            "prompt": f"{self}",
             "get_rate_limit": False,
             "temperature": 0.35,
             "max_tokens": 512,

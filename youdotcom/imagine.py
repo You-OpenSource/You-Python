@@ -36,7 +36,7 @@ class Imagine:
     #     self.__verbose = verbose
     #     self.__driver = driver
 
-    def Imagine(message: str) -> dict:
+    def Imagine(self) -> dict:
         """
         Search on You.com\n
         Parameters:
@@ -46,7 +46,7 @@ class Imagine:
         """
         start = time.time()
         scraper = cloudscraper.create_scraper()
-        data = '{"url":"api/stableDiffusion","headers":{},"data":{"prompt":"' + message + '"},"appName":"stable_diffusion"}'
+        data = '{"url":"api/stableDiffusion","headers":{},"data":{"prompt":"' + self + '"},"appName":"stable_diffusion"}'
         msg = scraper.get("https://you.com/api/template_api", data=data, timeout=30).text
         # if "<!DOCTYPE html>" in msg.text:
         #     msg = "error, gateway time-out"

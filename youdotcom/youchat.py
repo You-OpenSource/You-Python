@@ -52,7 +52,6 @@ class Chat:
         - time: the time it took to complete your request\n
         - some other data for issues reporting.
         """
-        if api_key == "" or None:
+        if not api_key:
             raise ValueError("Chat.api_key must be set before making a request. Don't have an api key? get one on https://api.betterapi.net/")
-        data = requests.get(f"https://api.betterapi.net/youdotcom/chat?message={message}&key={api_key}").json()
-        return data
+        return requests.get(f"https://api.betterapi.net/youdotcom/chat?message={message}&key={api_key}").json()

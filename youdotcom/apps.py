@@ -35,7 +35,7 @@ class Apps:
     #     self.__verbose = verbose
     #     self.__driver = driver
 
-    def get_app(driver, message: str) -> dict:
+    def get_app(self, message: str) -> dict:
 
         """
         Send a message to the chatbot\n
@@ -49,16 +49,16 @@ class Apps:
         start = time.time()
         # Ensure that the Cloudflare cookies is still valid
 
-        driver.get("https://you.com/search?q=" + message + "&tbm=youchat")
+        self.get(f"https://you.com/search?q={message}&tbm=youchat")
 
         # Send the message
 
-        WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.TAG_NAME, "textarea")))
-        textbox = driver.find_element(By.TAG_NAME, "textarea")
+        WebDriverWait(self, 5).until(EC.element_to_be_clickable((By.TAG_NAME, "textarea")))
+        textbox = self.find_element(By.TAG_NAME, "textarea")
 
         # Sending emoji (from https://stackoverflow.com/a/61043442)
         textbox.click()
-        driver.execute_script(
+        self.execute_script(
             """
         var element = arguments[0], txt = arguments[1];
         element.value += txt;
@@ -71,11 +71,11 @@ class Apps:
 
         # Wait for the response to be ready
 
-        WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, '//*[@id="chatHistory"]/div/div[2]/p/p')))
+        WebDriverWait(self, 5).until(EC.presence_of_element_located((By.XPATH, '//*[@id="chatHistory"]/div/div[2]/p/p')))
 
         # Get the response element
 
-        response = driver.find_element(By.XPATH, '//*[@id="chatHistory"]/div/div[2]')
+        response = self.find_element(By.XPATH, '//*[@id="chatHistory"]/div/div[2]')
 
         # Check if the response is an error
 

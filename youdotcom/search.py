@@ -35,7 +35,7 @@ class Search:
     #     self.__verbose = verbose
     #     self.__driver = driver
 
-    def search_for(message: str) -> dict:
+    def search_for(self) -> dict:
         """
         Search on You.com\n
         Parameters:
@@ -45,7 +45,7 @@ class Search:
         """
         start = time.time()
         scraper = cloudscraper.create_scraper()
-        msg = scraper.get("https://you.com/api/search?q=" + message).text
+        msg = scraper.get(f"https://you.com/api/search?q={self}").text
         msg = json.loads(msg)
         msg = msg["searchResults"]
         timedate = time.time() - start

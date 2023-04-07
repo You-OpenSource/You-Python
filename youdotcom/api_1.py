@@ -55,7 +55,7 @@ origins = ["*"]
 
 
 @app.exception_handler(RequestValidationError)
-async def validation_exception_handler(request: Request, exc: RequestValidationError):
+async def validation_exception_handler(request: Request, exc: RequestValidationError) -> JSONResponse:
     return JSONResponse(
         status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
         content=jsonable_encoder(
@@ -84,9 +84,8 @@ def get_response(success_status: bool, result: Any) -> JSONResponse | dict:
     if success_status:
         return result
     if result == -1:
-        return JSONResponse(status_code=503, content=f"Service Temporarily Unavailable")
-    else:
-        return JSONResponse(status_code=500, content=f"Internal Server Error")
+        return JSONResponse(status_code=503, content="Service Temporarily Unavailable")
+    return JSONResponse(status_code=500, content="Internal Server Error")
 
 
 @app.get("/chat")
@@ -121,8 +120,7 @@ async def YouChat(request: Request, message, contextid=""):
 
 @app.get("/")
 async def main():
-    response = RedirectResponse(url="/redoc")
-    return response
+    return RedirectResponse(url="/redoc")
 
 
 ip = "0.0.0.0"
@@ -131,5 +129,5 @@ port = 80
 
 try:
     uvicorn.run(app, host=sys.argv[1], port=sys.argv[2])
-except:
+except Exception:
     print(traceback.format_exc())
