@@ -1853,18 +1853,21 @@ files = [
 
 [[package]]
 name = "slowapi"
-version = "0.1.7"
+version = "0.1.8"
 description = "A rate limiting extension for Starlette and Fastapi"
 category = "main"
 optional = false
 python-versions = ">=3.7,<4.0"
 files = [
-    {file = "slowapi-0.1.7-py3-none-any.whl", hash = "sha256:94743ba5f68359455cfa1be214c086134c03f4e7072590682671fc65c744a615"},
-    {file = "slowapi-0.1.7.tar.gz", hash = "sha256:5a4a6f3e232d0465085392c1d92f6f8f6a6329ed2102a80062094fe86d7b1f36"},
+    {file = "slowapi-0.1.8-py3-none-any.whl", hash = "sha256:629fc415575bbffcd9d8621cc3ce326a78402c5f9b7b50b127979118d485c72e"},
+    {file = "slowapi-0.1.8.tar.gz", hash = "sha256:8cc268f5a7e3624efa3f7bd2859b895f9f2376c4ed4e0378dd2f7f3343ca608e"},
 ]
 
 [package.dependencies]
-limits = ">=2.3,<3.0"
+limits = ">=2.3"
+
+[package.extras]
+redis = ["redis (>=3.4.1,<4.0.0)"]
 
 [[package]]
 name = "smmap"
