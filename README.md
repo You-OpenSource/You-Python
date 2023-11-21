@@ -382,7 +382,7 @@ client.run('token')
 ## YouDotCom roadmap
 * [x] add youchat
 * [x] add youcode
-* [ ] swith to using you.com/api
+* [ ] switch to using you.com/api
 * [ ] make code faster
 * [ ] add code translate 
 * [ ] add all of you.com apps
