@@ -68,7 +68,7 @@ safety = "^2.3.5"
 coverage = "^7.2.3"
 coverage-badge = "^1.1.0"
 pytest-html = "^3.2.0"
-pytest-cov = "^4.0.0"
+pytest-cov = "^4.1.0"
 click = "8.1.4"
 
 [tool.poetry.group.dev.dependencies]
